@@ -5,6 +5,7 @@
 	<artifactId>msgrtr</artifactId>
 	<version>0.0.5</version>
 	<packaging>jar</packaging>
+	<url>https://github.com/att/dmaap-framework</url>
 	<properties>
 		<spring.version>3.2.14.RELEASE</spring.version>
 		<cxf.version>3.0.4</cxf.version>
@@ -323,6 +324,20 @@
 					<datafile>${basedir}/target/coverage-reports/jacoco-unit.exec</datafile>
 				</configuration>
 			</plugin>
+ 			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-gpg-plugin</artifactId>
+				<version>1.5</version>
+				<executions>
+					<execution>
+						<id>sign-artifacts</id>
+						<phase>verify</phase>
+						<goals>
+							<goal>sign</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin> 			
 		</plugins>
 	</build>
 
