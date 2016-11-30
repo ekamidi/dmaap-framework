@@ -13,6 +13,7 @@
 		<sonar.cobertura.reportPath>target/cobertura/cobertura.ser</sonar.cobertura.reportPath>
 		<maven.compiler.target>1.7</maven.compiler.target>
 		<maven.compiler.source>1.7</maven.compiler.source>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 
 	<!-- Distribution management -->
@@ -21,6 +22,37 @@
 
 	<!-- End Distribution management -->
 
+	 <licenses>
+	  <license>
+	    <name>BSD License</name>
+	    <url>https://github.com/att/DME/blob/master/License.txt</url>
+	  </license>
+	</licenses>
+
+	<developers>
+	   <developer>
+	     <name>Rajashree</name>
+	     <email></email>
+	     <organization>ATT</organization>
+	     <organizationUrl>www.att.com</organizationUrl>
+	   </developer>
+	   <developer>
+	     <name>Ramkumar</name>
+	     <email></email>
+	     <organization>ATT</organization>
+	     <organizationUrl>www.att.com</organizationUrl>
+	   </developer>
+	 </developers>
+	 <distributionManagement>
+    		<snapshotRepository>
+      			<id>ossrhdme</id>
+      			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
+    		</snapshotRepository>
+    		<repository>
+      			<id>ossrhdme</id>
+      			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+    		</repository>
+	</distributionManagement>
 
 	<dependencies>
 
