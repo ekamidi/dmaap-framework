@@ -5,6 +5,8 @@
 	<artifactId>msgrtr</artifactId>
 	<version>0.0.5</version>
 	<packaging>jar</packaging>
+	<name>Message Router</name>
+	<description>Message Router - Restful interface built for kafka</description>
 	<url>https://github.com/att/dmaap-framework</url>
 	<properties>
 		<spring.version>3.2.14.RELEASE</spring.version>

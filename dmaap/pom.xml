@@ -11,6 +11,9 @@
 	<groupId>com.att.nsa</groupId>
 	<artifactId>dmaapMR1</artifactId>
 	<version>1.0.18-SNAPSHOT</version>
+	<name>Message Router Service</name>
+	<description>Message Router - Restful interface built for kafka</description>
+	<url>https://github.com/att/dmaap-framework</url>	
 	 <licenses>
 	  <license>
 	    <name>BSD License</name>
