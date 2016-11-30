@@ -46,19 +46,36 @@
 		</repository>
 	</repositories>
 
-	<!-- Distribution management -->
+	 <licenses>
+	  <license>
+	    <name>BSD License</name>
+	    <url>https://github.com/att/DME/blob/master/License.txt</url>
+	  </license>
+	</licenses>
 
-	<distributionManagement>
-		<repository>
-			<id>nexus</id>
-			<name>att-repository-releases</name>
-			<url>http://mavencentral.it.att.com:8084/nexus/content/repositories/att-repository-releases</url>
-		</repository>
-		<snapshotRepository>
-			<id>nexus</id>
-			<name>att-repository-snapshots</name>
-			<url>http://mavencentral.it.att.com:8084/nexus/content/repositories/att-repository-snapshots</url>
-		</snapshotRepository>
+	<developers>
+	   <developer>
+	     <name>Rajashree</name>
+	     <email></email>
+	     <organization>ATT</organization>
+	     <organizationUrl>www.att.com</organizationUrl>
+	   </developer>
+	   <developer>
+	     <name>Ramkumar</name>
+	     <email></email>
+	     <organization>ATT</organization>
+	     <organizationUrl>www.att.com</organizationUrl>
+	   </developer>
+	 </developers>
+	 <distributionManagement>
+    		<snapshotRepository>
+      			<id>ossrhdme</id>
+      			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
+    		</snapshotRepository>
+    		<repository>
+      			<id>ossrhdme</id>
+      			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+    		</repository>
 	</distributionManagement>
 
 

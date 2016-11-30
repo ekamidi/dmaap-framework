@@ -11,6 +11,37 @@
 	<groupId>com.att.nsa</groupId>
 	<artifactId>dmaapMR1</artifactId>
 	<version>1.0.18-SNAPSHOT</version>
+	 <licenses>
+	  <license>
+	    <name>BSD License</name>
+	    <url>https://github.com/att/DME/blob/master/License.txt</url>
+	  </license>
+	</licenses>
+
+	<developers>
+	   <developer>
+	     <name>Rajashree</name>
+	     <email></email>
+	     <organization>ATT</organization>
+	     <organizationUrl>www.att.com</organizationUrl>
+	   </developer>
+	   <developer>
+	     <name>Ramkumar</name>
+	     <email></email>
+	     <organization>ATT</organization>
+	     <organizationUrl>www.att.com</organizationUrl>
+	   </developer>
+	 </developers>
+	 <distributionManagement>
+    		<snapshotRepository>
+      			<id>ossrhdme</id>
+      			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
+    		</snapshotRepository>
+    		<repository>
+      			<id>ossrhdme</id>
+      			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+    		</repository>
+	</distributionManagement>
 
 	<build>
 		<plugins>
@@ -133,6 +164,7 @@
 	</build>
 
 	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<dockerLocation>${basedir}/target/swm/package/nix/dist_files/</dockerLocation>
 		<docker.registry>zlp11313.vci.att.com:5100</docker.registry>
 
