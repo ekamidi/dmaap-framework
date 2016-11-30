@@ -17,7 +17,7 @@ node {
     //sh for unix bat for windows
 	
     sh "${mvnHome}/bin/mvn -f Msgrtr/pom.xml clean deploy"
-    sh "${mvnHome}/bin/mvn -f dmaap/pom.xml clean deploy"
+    // sh "${mvnHome}/bin/mvn -f dmaap/pom.xml clean deploy"
     sh "${mvnHome}/bin/mvn -f dmaapClient/pom.xml clean deploy"
    
 }
