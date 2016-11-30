@@ -540,5 +540,9 @@
 			</build>
 		</profile>
 	</profiles>
-
+	<scm>
+		<connection>https://github.com/att/dmaap-framework.git</connection>
+		<developerConnection>${project.scm.connection}</developerConnection>
+		<url>http://github.com/att/dmaap-framework/tree/master</url>
+	</scm>
 </project>
