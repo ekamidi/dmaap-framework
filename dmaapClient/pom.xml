@@ -26,10 +26,10 @@
 	<groupId>com.att.nsa</groupId>
 	<artifactId>dmaapClient</artifactId>
 	<packaging>jar</packaging>
-	<version>0.2.12-SNAPSHOT</version>
+	<version>0.2.12</version>
 	<name>dmaapClient</name>
 	<description>Client library for MR event routing API</description>
-	<url></url>
+	<url>https://github.com/att/dmaap-framework</url>
 
 
 	<properties>
@@ -213,7 +213,7 @@
 					<target>1.7</target>
 				</configuration>
 			</plugin>
-<!-- 			<plugin>
+ 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-gpg-plugin</artifactId>
 				<version>1.5</version>
@@ -226,7 +226,7 @@
 						</goals>
 					</execution>
 				</executions>
-			</plugin> -->
+			</plugin> 
 
 		</plugins>
 	</build>
@@ -250,4 +250,5 @@
 			</build>
 		</profile>
 	</profiles>
+
 </project>
