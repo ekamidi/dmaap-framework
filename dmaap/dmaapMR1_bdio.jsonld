@@ -1,0 +1,3269 @@
+[ {
+  "@id" : "uuid:9907ef76-08a2-4033-bcfb-b72c87cd6979",
+  "@type" : "BillOfMaterials",
+  "specVersion" : "1.1.0",
+  "spdx:name" : "dmaapMR1 Black Duck I/O Export",
+  "creationInfo" : {
+    "spdx:creator" : "Tool: Launcher",
+    "spdx:created" : "2016-11-30T21:23:41.000Z"
+  }
+}, {
+  "@id" : "maven:com.att.nsa/dmaapMR1/1.0.18-SNAPSHOT",
+  "@type" : "Project",
+  "name" : "dmaapMR1",
+  "revision" : "1.0.18-SNAPSHOT",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "com.att.nsa:dmaapMR1:1.0.18-SNAPSHOT"
+  },
+  "relationship" : [ {
+    "related" : "maven:com.att.cadi/cadi-core/1.3.0",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:commons-io/commons-io/2.4",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:com.att.nsa/msgrtr/0.0.5",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.codehaus.jackson/jackson-jaxrs/1.9.13",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.json/json/20131018",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.apache.cxf/cxf-rt-rs-extension-providers/3.0.4",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.codehaus.jettison/jettison/1.3.7",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:dom4j/dom4j/1.6.1",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:com.att.aft/dme2/2.6.29",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:com.att.ajsc/ajsc-archetype-parent/0.0.1-SNAPSHOT",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:com.att.ajsc/ajsc-runner/0.0.1-SNAPSHOT",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:com.att.ajsc/ajsc-core/0.0.1-SNAPSHOT",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.mockito/mockito-all/1.9.5",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.codehaus.groovy/groovy-eclipse-compiler/2.8.0-01",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.codehaus.groovy/groovy-all/2.4.3",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.eclipse.jetty/jetty-util/9.2.9.v20150224",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:backport-util-concurrent/backport-util-concurrent/3.1",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:com.att.aft.discovery/discovery-clt/5.1.3-01",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:com.att.aft.fusion/ctx-factory/1.12",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:com.att.aft.discovery/discovery-ctx/5.1.3-15",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.apache.camel/camel-core/2.15.5",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.apache.camel/camel-quartz/2.15.5",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.apache.camel/camel-spring/2.15.5",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.restlet.jee/org.restlet.ext.spring/2.2.1",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.apache.camel/camel-restlet/2.15.5",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.apache.camel/camel-servlet/2.15.5",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.apache.camel/camel-http4/2.15.5",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.apache.camel/camel-groovy/2.15.5",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.apache.camel/camel-twitter/2.15.5",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.apache.camel/camel-mail/2.15.5",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.apache.camel/camel-smpp/2.15.5",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.apache.camel/camel-jms/2.15.5",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.apache.camel/camel-script/2.15.5",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.apache.camel/camel-xmpp/2.15.5",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.apache.camel/camel-velocity/2.15.5",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.springframework/spring-core/3.2.4.RELEASE",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.springframework/spring-beans/3.2.4.RELEASE",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.springframework/spring-expression/3.2.4.RELEASE",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.restlet.jee/org.restlet/2.2.1",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.restlet.jee/org.restlet.ext.servlet/2.2.1",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.springframework/spring-web/3.2.4.RELEASE",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.springframework/spring-webmvc/3.2.4.RELEASE",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.springframework.security.oauth/spring-security-oauth2/1.0.5.RELEASE",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.codehaus.jackson/jackson-mapper-asl/1.9.13",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.codehaus.jackson/jackson-core-asl/1.9.13",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.springframework/spring-context/3.2.4.RELEASE",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.springframework.security/spring-security-core/3.2.4.RELEASE",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.springframework.security/spring-security-web/3.2.4.RELEASE",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.springframework.security/spring-security-config/3.2.4.RELEASE",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.springframework/spring-jmx/2.0.8",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:junit/junit/4.11",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:bsh/bsh/1.3.0",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.grails/grails-spring/2.3.1",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.apache.camel/camel-cxf/2.15.5",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.apache.xmlbeans/xmlbeans-xmlpublic/2.6.0",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:commons-collections/commons-collections/3.2.2",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:com.att.camel/att-camel-dme2-servlet/2.15.5.0",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:com.github.fge/json-schema-validator/2.2.6",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.springframework/spring-aop/3.2.4.RELEASE",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.springframework/spring-context-support/3.2.4.RELEASE",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.springframework/spring-tx/3.2.4.RELEASE",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.springframework/spring-jdbc/3.2.4.RELEASE",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.springframework/spring-orm/3.2.4.RELEASE",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.springframework/spring-oxm/3.2.4.RELEASE",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.springframework/spring-webmvc-portlet/3.2.4.RELEASE",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.springframework/spring-test/3.2.4.RELEASE",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:commons-validator/commons-validator/1.3.1",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.apache.camel/camel-ejb/2.15.5",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.apache.openejb/openejb-core/4.5.2",
+    "relationshipType" : "DYNAMIC_LINK"
+  } ]
+}, {
+  "@id" : "maven:com.att.cadi/cadi-core/1.3.0",
+  "@type" : "Component",
+  "revision" : "1.3.0",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "com.att.cadi:cadi-core:1.3.0"
+  },
+  "relationship" : {
+    "related" : "maven:gso/GLCookieDecryption/1.0",
+    "relationshipType" : "DYNAMIC_LINK"
+  }
+}, {
+  "@id" : "maven:gso/GLCookieDecryption/1.0",
+  "@type" : "Component",
+  "revision" : "1.0",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "gso:GLCookieDecryption:1.0"
+  }
+}, {
+  "@id" : "maven:commons-io/commons-io/2.4",
+  "@type" : "Component",
+  "revision" : "2.4",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "commons-io:commons-io:2.4"
+  }
+}, {
+  "@id" : "maven:com.att.nsa/msgrtr/0.0.5",
+  "@type" : "Component",
+  "revision" : "0.0.5",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "com.att.nsa:msgrtr:0.0.5"
+  },
+  "relationship" : [ {
+    "related" : "maven:org.slf4j/slf4j-api/1.7.21",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:javax.inject/javax.inject/1",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:javax.ws.rs/javax.ws.rs-api/2.0.1",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.apache.zookeeper/zookeeper/3.4.6",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.apache.kafka/kafka_2.10/0.8.2.1",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:com.att.eelf/eelf-core/0.0.1",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:com.att.nsa/nsaServerLibrary/1.0.10",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:com.att.nsa/saToolkit/0.0.1",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:com.att.nsa/saClientLibrary/0.0.1",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.apache.httpcomponents/httpclient/4.4.1",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.apache.httpcomponents/httpclient-cache/4.4.1",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:jline/jline/2.12.1",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.apache.curator/curator-recipes/2.6.0",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.apache.curator/curator-test/2.6.0",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:com.google.code.gson/gson/2.8.0",
+    "relationshipType" : "DYNAMIC_LINK"
+  } ]
+}, {
+  "@id" : "maven:org.slf4j/slf4j-api/1.7.21",
+  "@type" : "Component",
+  "revision" : "1.7.21",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.slf4j:slf4j-api:1.7.21"
+  }
+}, {
+  "@id" : "maven:javax.inject/javax.inject/1",
+  "@type" : "Component",
+  "revision" : "1",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "javax.inject:javax.inject:1"
+  }
+}, {
+  "@id" : "maven:javax.ws.rs/javax.ws.rs-api/2.0.1",
+  "@type" : "Component",
+  "revision" : "2.0.1",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "javax.ws.rs:javax.ws.rs-api:2.0.1"
+  }
+}, {
+  "@id" : "maven:org.apache.zookeeper/zookeeper/3.4.6",
+  "@type" : "Component",
+  "revision" : "3.4.6",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.apache.zookeeper:zookeeper:3.4.6"
+  },
+  "relationship" : [ {
+    "related" : "maven:log4j/log4j/1.2.16",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:io.netty/netty/3.7.0.Final",
+    "relationshipType" : "DYNAMIC_LINK"
+  } ]
+}, {
+  "@id" : "maven:log4j/log4j/1.2.16",
+  "@type" : "Component",
+  "revision" : "1.2.16",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "log4j:log4j:1.2.16"
+  }
+}, {
+  "@id" : "maven:io.netty/netty/3.7.0.Final",
+  "@type" : "Component",
+  "revision" : "3.7.0.Final",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "io.netty:netty:3.7.0.Final"
+  }
+}, {
+  "@id" : "maven:org.apache.kafka/kafka_2.10/0.8.2.1",
+  "@type" : "Component",
+  "revision" : "0.8.2.1",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.apache.kafka:kafka_2.10:0.8.2.1"
+  },
+  "relationship" : [ {
+    "related" : "maven:com.yammer.metrics/metrics-core/2.2.0",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.scala-lang/scala-library/2.10.4",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.apache.kafka/kafka-clients/0.8.2.1",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:com.101tec/zkclient/0.3",
+    "relationshipType" : "DYNAMIC_LINK"
+  } ]
+}, {
+  "@id" : "maven:com.yammer.metrics/metrics-core/2.2.0",
+  "@type" : "Component",
+  "revision" : "2.2.0",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "com.yammer.metrics:metrics-core:2.2.0"
+  }
+}, {
+  "@id" : "maven:org.scala-lang/scala-library/2.10.4",
+  "@type" : "Component",
+  "revision" : "2.10.4",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.scala-lang:scala-library:2.10.4"
+  }
+}, {
+  "@id" : "maven:org.apache.kafka/kafka-clients/0.8.2.1",
+  "@type" : "Component",
+  "revision" : "0.8.2.1",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.apache.kafka:kafka-clients:0.8.2.1"
+  },
+  "relationship" : [ {
+    "related" : "maven:net.jpountz.lz4/lz4/1.2.0",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.xerial.snappy/snappy-java/1.1.1.6",
+    "relationshipType" : "DYNAMIC_LINK"
+  } ]
+}, {
+  "@id" : "maven:net.jpountz.lz4/lz4/1.2.0",
+  "@type" : "Component",
+  "revision" : "1.2.0",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "net.jpountz.lz4:lz4:1.2.0"
+  }
+}, {
+  "@id" : "maven:org.xerial.snappy/snappy-java/1.1.1.6",
+  "@type" : "Component",
+  "revision" : "1.1.1.6",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.xerial.snappy:snappy-java:1.1.1.6"
+  }
+}, {
+  "@id" : "maven:com.101tec/zkclient/0.3",
+  "@type" : "Component",
+  "revision" : "0.3",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "com.101tec:zkclient:0.3"
+  }
+}, {
+  "@id" : "maven:com.att.eelf/eelf-core/0.0.1",
+  "@type" : "Component",
+  "revision" : "0.0.1",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "com.att.eelf:eelf-core:0.0.1"
+  },
+  "relationship" : [ {
+    "related" : "maven:ch.qos.logback/logback-core/1.1.3",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:ch.qos.logback/logback-classic/1.1.7",
+    "relationshipType" : "DYNAMIC_LINK"
+  } ]
+}, {
+  "@id" : "maven:ch.qos.logback/logback-core/1.1.3",
+  "@type" : "Component",
+  "revision" : "1.1.3",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "ch.qos.logback:logback-core:1.1.3"
+  }
+}, {
+  "@id" : "maven:ch.qos.logback/logback-classic/1.1.7",
+  "@type" : "Component",
+  "revision" : "1.1.7",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "ch.qos.logback:logback-classic:1.1.7"
+  }
+}, {
+  "@id" : "maven:com.att.nsa/nsaServerLibrary/1.0.10",
+  "@type" : "Component",
+  "revision" : "1.0.10",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "com.att.nsa:nsaServerLibrary:1.0.10"
+  },
+  "relationship" : {
+    "related" : "maven:com.att.nsa/cambriaClient/0.0.1",
+    "relationshipType" : "DYNAMIC_LINK"
+  }
+}, {
+  "@id" : "maven:com.att.nsa/cambriaClient/0.0.1",
+  "@type" : "Component",
+  "revision" : "0.0.1",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "com.att.nsa:cambriaClient:0.0.1"
+  }
+}, {
+  "@id" : "maven:com.att.nsa/saToolkit/0.0.1",
+  "@type" : "Component",
+  "revision" : "0.0.1",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "com.att.nsa:saToolkit:0.0.1"
+  }
+}, {
+  "@id" : "maven:com.att.nsa/saClientLibrary/0.0.1",
+  "@type" : "Component",
+  "revision" : "0.0.1",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "com.att.nsa:saClientLibrary:0.0.1"
+  }
+}, {
+  "@id" : "maven:org.apache.httpcomponents/httpclient/4.4.1",
+  "@type" : "Component",
+  "revision" : "4.4.1",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.apache.httpcomponents:httpclient:4.4.1"
+  },
+  "relationship" : [ {
+    "related" : "maven:org.apache.httpcomponents/httpcore/4.4.1",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:commons-logging/commons-logging/1.2",
+    "relationshipType" : "DYNAMIC_LINK"
+  } ]
+}, {
+  "@id" : "maven:org.apache.httpcomponents/httpcore/4.4.1",
+  "@type" : "Component",
+  "revision" : "4.4.1",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.apache.httpcomponents:httpcore:4.4.1"
+  }
+}, {
+  "@id" : "maven:commons-logging/commons-logging/1.2",
+  "@type" : "Component",
+  "revision" : "1.2",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "commons-logging:commons-logging:1.2"
+  }
+}, {
+  "@id" : "maven:org.apache.httpcomponents/httpclient-cache/4.4.1",
+  "@type" : "Component",
+  "revision" : "4.4.1",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.apache.httpcomponents:httpclient-cache:4.4.1"
+  }
+}, {
+  "@id" : "maven:jline/jline/2.12.1",
+  "@type" : "Component",
+  "revision" : "2.12.1",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "jline:jline:2.12.1"
+  }
+}, {
+  "@id" : "maven:org.apache.curator/curator-recipes/2.6.0",
+  "@type" : "Component",
+  "revision" : "2.6.0",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.apache.curator:curator-recipes:2.6.0"
+  },
+  "relationship" : [ {
+    "related" : "maven:org.apache.curator/curator-framework/2.6.0",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:com.google.guava/guava/16.0.1",
+    "relationshipType" : "DYNAMIC_LINK"
+  } ]
+}, {
+  "@id" : "maven:org.apache.curator/curator-framework/2.6.0",
+  "@type" : "Component",
+  "revision" : "2.6.0",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.apache.curator:curator-framework:2.6.0"
+  },
+  "relationship" : {
+    "related" : "maven:org.apache.curator/curator-client/2.6.0",
+    "relationshipType" : "DYNAMIC_LINK"
+  }
+}, {
+  "@id" : "maven:org.apache.curator/curator-client/2.6.0",
+  "@type" : "Component",
+  "revision" : "2.6.0",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.apache.curator:curator-client:2.6.0"
+  }
+}, {
+  "@id" : "maven:com.google.guava/guava/16.0.1",
+  "@type" : "Component",
+  "revision" : "16.0.1",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "com.google.guava:guava:16.0.1"
+  }
+}, {
+  "@id" : "maven:org.apache.curator/curator-test/2.6.0",
+  "@type" : "Component",
+  "revision" : "2.6.0",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.apache.curator:curator-test:2.6.0"
+  },
+  "relationship" : {
+    "related" : "maven:org.apache.commons/commons-math/2.2",
+    "relationshipType" : "DYNAMIC_LINK"
+  }
+}, {
+  "@id" : "maven:org.apache.commons/commons-math/2.2",
+  "@type" : "Component",
+  "revision" : "2.2",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.apache.commons:commons-math:2.2"
+  }
+}, {
+  "@id" : "maven:com.google.code.gson/gson/2.8.0",
+  "@type" : "Component",
+  "revision" : "2.8.0",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "com.google.code.gson:gson:2.8.0"
+  }
+}, {
+  "@id" : "maven:org.codehaus.jackson/jackson-jaxrs/1.9.13",
+  "@type" : "Component",
+  "revision" : "1.9.13",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.codehaus.jackson:jackson-jaxrs:1.9.13"
+  }
+}, {
+  "@id" : "maven:org.json/json/20131018",
+  "@type" : "Component",
+  "revision" : "20131018",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.json:json:20131018"
+  }
+}, {
+  "@id" : "maven:org.apache.cxf/cxf-rt-rs-extension-providers/3.0.4",
+  "@type" : "Component",
+  "revision" : "3.0.4",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.apache.cxf:cxf-rt-rs-extension-providers:3.0.4"
+  },
+  "relationship" : [ {
+    "related" : "maven:org.apache.cxf/cxf-core/3.0.4",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.apache.cxf/cxf-rt-frontend-jaxrs/3.0.4",
+    "relationshipType" : "DYNAMIC_LINK"
+  } ]
+}, {
+  "@id" : "maven:org.apache.cxf/cxf-core/3.0.4",
+  "@type" : "Component",
+  "revision" : "3.0.4",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.apache.cxf:cxf-core:3.0.4"
+  },
+  "relationship" : [ {
+    "related" : "maven:org.codehaus.woodstox/woodstox-core-asl/4.4.1",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.apache.ws.xmlschema/xmlschema-core/2.2.1",
+    "relationshipType" : "DYNAMIC_LINK"
+  } ]
+}, {
+  "@id" : "maven:org.codehaus.woodstox/woodstox-core-asl/4.4.1",
+  "@type" : "Component",
+  "revision" : "4.4.1",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.codehaus.woodstox:woodstox-core-asl:4.4.1"
+  },
+  "relationship" : {
+    "related" : "maven:org.codehaus.woodstox/stax2-api/3.1.4",
+    "relationshipType" : "DYNAMIC_LINK"
+  }
+}, {
+  "@id" : "maven:org.codehaus.woodstox/stax2-api/3.1.4",
+  "@type" : "Component",
+  "revision" : "3.1.4",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.codehaus.woodstox:stax2-api:3.1.4"
+  }
+}, {
+  "@id" : "maven:org.apache.ws.xmlschema/xmlschema-core/2.2.1",
+  "@type" : "Component",
+  "revision" : "2.2.1",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.apache.ws.xmlschema:xmlschema-core:2.2.1"
+  }
+}, {
+  "@id" : "maven:org.apache.cxf/cxf-rt-frontend-jaxrs/3.0.4",
+  "@type" : "Component",
+  "revision" : "3.0.4",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.apache.cxf:cxf-rt-frontend-jaxrs:3.0.4"
+  },
+  "relationship" : [ {
+    "related" : "maven:javax.annotation/javax.annotation-api/1.2",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.apache.cxf/cxf-rt-transports-http/3.0.4",
+    "relationshipType" : "DYNAMIC_LINK"
+  } ]
+}, {
+  "@id" : "maven:javax.annotation/javax.annotation-api/1.2",
+  "@type" : "Component",
+  "revision" : "1.2",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "javax.annotation:javax.annotation-api:1.2"
+  }
+}, {
+  "@id" : "maven:org.apache.cxf/cxf-rt-transports-http/3.0.4",
+  "@type" : "Component",
+  "revision" : "3.0.4",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.apache.cxf:cxf-rt-transports-http:3.0.4"
+  }
+}, {
+  "@id" : "maven:org.codehaus.jettison/jettison/1.3.7",
+  "@type" : "Component",
+  "revision" : "1.3.7",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.codehaus.jettison:jettison:1.3.7"
+  },
+  "relationship" : {
+    "related" : "maven:stax/stax-api/1.0.1",
+    "relationshipType" : "DYNAMIC_LINK"
+  }
+}, {
+  "@id" : "maven:stax/stax-api/1.0.1",
+  "@type" : "Component",
+  "revision" : "1.0.1",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "stax:stax-api:1.0.1"
+  }
+}, {
+  "@id" : "maven:dom4j/dom4j/1.6.1",
+  "@type" : "Component",
+  "revision" : "1.6.1",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "dom4j:dom4j:1.6.1"
+  },
+  "relationship" : {
+    "related" : "maven:xml-apis/xml-apis/1.0.b2",
+    "relationshipType" : "DYNAMIC_LINK"
+  }
+}, {
+  "@id" : "maven:xml-apis/xml-apis/1.0.b2",
+  "@type" : "Component",
+  "revision" : "1.0.b2",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "xml-apis:xml-apis:1.0.b2"
+  }
+}, {
+  "@id" : "maven:com.att.aft/dme2/2.6.29",
+  "@type" : "Component",
+  "revision" : "2.6.29",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "com.att.aft:dme2:2.6.29"
+  },
+  "relationship" : [ {
+    "related" : "maven:org.eclipse.jetty.orbit/javax.servlet/2.5.0.v201103041518",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.eclipse.jetty.orbit/javax.transaction/1.1.1.v201105210645",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.eclipse.jetty.orbit/javax.mail.glassfish/1.4.1.v201005082020",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.eclipse.jetty.orbit/javax.activation/1.1.0.v201105071233",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:javax.jms/jms/1.1",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:javax.servlet/servlet-api/2.5",
+    "relationshipType" : "DYNAMIC_LINK"
+  } ]
+}, {
+  "@id" : "maven:org.eclipse.jetty.orbit/javax.servlet/2.5.0.v201103041518",
+  "@type" : "Component",
+  "revision" : "2.5.0.v201103041518",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.eclipse.jetty.orbit:javax.servlet:2.5.0.v201103041518"
+  }
+}, {
+  "@id" : "maven:org.eclipse.jetty.orbit/javax.transaction/1.1.1.v201105210645",
+  "@type" : "Component",
+  "revision" : "1.1.1.v201105210645",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.eclipse.jetty.orbit:javax.transaction:1.1.1.v201105210645"
+  }
+}, {
+  "@id" : "maven:org.eclipse.jetty.orbit/javax.mail.glassfish/1.4.1.v201005082020",
+  "@type" : "Component",
+  "revision" : "1.4.1.v201005082020",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.eclipse.jetty.orbit:javax.mail.glassfish:1.4.1.v201005082020"
+  }
+}, {
+  "@id" : "maven:org.eclipse.jetty.orbit/javax.activation/1.1.0.v201105071233",
+  "@type" : "Component",
+  "revision" : "1.1.0.v201105071233",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.eclipse.jetty.orbit:javax.activation:1.1.0.v201105071233"
+  }
+}, {
+  "@id" : "maven:javax.jms/jms/1.1",
+  "@type" : "Component",
+  "revision" : "1.1",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "javax.jms:jms:1.1"
+  }
+}, {
+  "@id" : "maven:javax.servlet/servlet-api/2.5",
+  "@type" : "Component",
+  "revision" : "2.5",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "javax.servlet:servlet-api:2.5"
+  }
+}, {
+  "@id" : "maven:com.att.ajsc/ajsc-archetype-parent/0.0.1-SNAPSHOT",
+  "@type" : "Component",
+  "revision" : "0.0.1-SNAPSHOT",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "com.att.ajsc:ajsc-archetype-parent:0.0.1-SNAPSHOT"
+  }
+}, {
+  "@id" : "maven:com.att.ajsc/ajsc-runner/0.0.1-SNAPSHOT",
+  "@type" : "Component",
+  "revision" : "0.0.1-SNAPSHOT",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "com.att.ajsc:ajsc-runner:0.0.1-SNAPSHOT"
+  },
+  "relationship" : {
+    "related" : "maven:com.att.ajsc/ajsc-war/0.0.1-SNAPSHOT",
+    "relationshipType" : "DYNAMIC_LINK"
+  }
+}, {
+  "@id" : "maven:com.att.ajsc/ajsc-war/0.0.1-SNAPSHOT",
+  "@type" : "Component",
+  "revision" : "0.0.1-SNAPSHOT",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "com.att.ajsc:ajsc-war:0.0.1-SNAPSHOT"
+  }
+}, {
+  "@id" : "maven:com.att.ajsc/ajsc-core/0.0.1-SNAPSHOT",
+  "@type" : "Component",
+  "revision" : "0.0.1-SNAPSHOT",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "com.att.ajsc:ajsc-core:0.0.1-SNAPSHOT"
+  },
+  "relationship" : {
+    "related" : "maven:org.grails/grails-web/1.3.7",
+    "relationshipType" : "DYNAMIC_LINK"
+  }
+}, {
+  "@id" : "maven:org.grails/grails-web/1.3.7",
+  "@type" : "Component",
+  "revision" : "1.3.7",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.grails:grails-web:1.3.7"
+  },
+  "relationship" : [ {
+    "related" : "maven:commons-el/commons-el/1.0",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:commons-fileupload/commons-fileupload/1.2.1",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:commons-lang/commons-lang/2.4",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:opensymphony/sitemesh/2.4",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:xpp3/xpp3_min/1.1.3.4.O",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.grails/grails-core/1.3.7",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:com.googlecode.concurrentlinkedhashmap/concurrentlinkedhashmap-lru/1.0_jdk5",
+    "relationshipType" : "DYNAMIC_LINK"
+  } ]
+}, {
+  "@id" : "maven:commons-el/commons-el/1.0",
+  "@type" : "Component",
+  "revision" : "1.0",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "commons-el:commons-el:1.0"
+  }
+}, {
+  "@id" : "maven:commons-fileupload/commons-fileupload/1.2.1",
+  "@type" : "Component",
+  "revision" : "1.2.1",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "commons-fileupload:commons-fileupload:1.2.1"
+  }
+}, {
+  "@id" : "maven:commons-lang/commons-lang/2.4",
+  "@type" : "Component",
+  "revision" : "2.4",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "commons-lang:commons-lang:2.4"
+  }
+}, {
+  "@id" : "maven:opensymphony/sitemesh/2.4",
+  "@type" : "Component",
+  "revision" : "2.4",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "opensymphony:sitemesh:2.4"
+  }
+}, {
+  "@id" : "maven:xpp3/xpp3_min/1.1.3.4.O",
+  "@type" : "Component",
+  "revision" : "1.1.3.4.O",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "xpp3:xpp3_min:1.1.3.4.O"
+  }
+}, {
+  "@id" : "maven:org.grails/grails-core/1.3.7",
+  "@type" : "Component",
+  "revision" : "1.3.7",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.grails:grails-core:1.3.7"
+  },
+  "relationship" : [ {
+    "related" : "maven:oro/oro/2.0.8",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:javax.persistence/persistence-api/1.0",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.springframework/spring-aspects/3.0.5.RELEASE",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.springframework/spring-instrument/3.0.5.RELEASE",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.aspectj/aspectjrt/1.6.8",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.grails/grails-docs/1.3.7",
+    "relationshipType" : "DYNAMIC_LINK"
+  } ]
+}, {
+  "@id" : "maven:oro/oro/2.0.8",
+  "@type" : "Component",
+  "revision" : "2.0.8",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "oro:oro:2.0.8"
+  }
+}, {
+  "@id" : "maven:javax.persistence/persistence-api/1.0",
+  "@type" : "Component",
+  "revision" : "1.0",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "javax.persistence:persistence-api:1.0"
+  }
+}, {
+  "@id" : "maven:org.springframework/spring-aspects/3.0.5.RELEASE",
+  "@type" : "Component",
+  "revision" : "3.0.5.RELEASE",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.springframework:spring-aspects:3.0.5.RELEASE"
+  }
+}, {
+  "@id" : "maven:org.springframework/spring-instrument/3.0.5.RELEASE",
+  "@type" : "Component",
+  "revision" : "3.0.5.RELEASE",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.springframework:spring-instrument:3.0.5.RELEASE"
+  }
+}, {
+  "@id" : "maven:org.aspectj/aspectjrt/1.6.8",
+  "@type" : "Component",
+  "revision" : "1.6.8",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.aspectj:aspectjrt:1.6.8"
+  }
+}, {
+  "@id" : "maven:org.grails/grails-docs/1.3.7",
+  "@type" : "Component",
+  "revision" : "1.3.7",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.grails:grails-docs:1.3.7"
+  },
+  "relationship" : [ {
+    "related" : "maven:radeox/radeox/1.0-b2",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.apache.ant/ant/1.7.1",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.xhtmlrenderer/core-renderer/R8",
+    "relationshipType" : "DYNAMIC_LINK"
+  } ]
+}, {
+  "@id" : "maven:radeox/radeox/1.0-b2",
+  "@type" : "Component",
+  "revision" : "1.0-b2",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "radeox:radeox:1.0-b2"
+  }
+}, {
+  "@id" : "maven:org.apache.ant/ant/1.7.1",
+  "@type" : "Component",
+  "revision" : "1.7.1",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.apache.ant:ant:1.7.1"
+  },
+  "relationship" : {
+    "related" : "maven:org.apache.ant/ant-launcher/1.7.1",
+    "relationshipType" : "DYNAMIC_LINK"
+  }
+}, {
+  "@id" : "maven:org.apache.ant/ant-launcher/1.7.1",
+  "@type" : "Component",
+  "revision" : "1.7.1",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.apache.ant:ant-launcher:1.7.1"
+  }
+}, {
+  "@id" : "maven:org.xhtmlrenderer/core-renderer/R8",
+  "@type" : "Component",
+  "revision" : "R8",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.xhtmlrenderer:core-renderer:R8"
+  }
+}, {
+  "@id" : "maven:com.googlecode.concurrentlinkedhashmap/concurrentlinkedhashmap-lru/1.0_jdk5",
+  "@type" : "Component",
+  "revision" : "1.0_jdk5",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "com.googlecode.concurrentlinkedhashmap:concurrentlinkedhashmap-lru:1.0_jdk5"
+  }
+}, {
+  "@id" : "maven:org.mockito/mockito-all/1.9.5",
+  "@type" : "Component",
+  "revision" : "1.9.5",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.mockito:mockito-all:1.9.5"
+  }
+}, {
+  "@id" : "maven:org.codehaus.groovy/groovy-eclipse-compiler/2.8.0-01",
+  "@type" : "Component",
+  "revision" : "2.8.0-01",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.codehaus.groovy:groovy-eclipse-compiler:2.8.0-01"
+  },
+  "relationship" : [ {
+    "related" : "maven:org.codehaus.plexus/plexus-compiler-api/2.2",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.codehaus.plexus/plexus-container-default/1.5.4",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.apache.maven/maven-plugin-api/2.0.6",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.apache.maven.plugins/maven-compiler-plugin/3.0",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.apache.maven/maven-core/2.0.6",
+    "relationshipType" : "DYNAMIC_LINK"
+  } ]
+}, {
+  "@id" : "maven:org.codehaus.plexus/plexus-compiler-api/2.2",
+  "@type" : "Component",
+  "revision" : "2.2",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.codehaus.plexus:plexus-compiler-api:2.2"
+  },
+  "relationship" : {
+    "related" : "maven:org.codehaus.plexus/plexus-utils/3.0.8",
+    "relationshipType" : "DYNAMIC_LINK"
+  }
+}, {
+  "@id" : "maven:org.codehaus.plexus/plexus-utils/3.0.8",
+  "@type" : "Component",
+  "revision" : "3.0.8",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.codehaus.plexus:plexus-utils:3.0.8"
+  }
+}, {
+  "@id" : "maven:org.codehaus.plexus/plexus-container-default/1.5.4",
+  "@type" : "Component",
+  "revision" : "1.5.4",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.codehaus.plexus:plexus-container-default:1.5.4"
+  },
+  "relationship" : [ {
+    "related" : "maven:org.codehaus.plexus/plexus-classworlds/2.2.2",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.apache.xbean/xbean-reflect/3.4",
+    "relationshipType" : "DYNAMIC_LINK"
+  } ]
+}, {
+  "@id" : "maven:org.codehaus.plexus/plexus-classworlds/2.2.2",
+  "@type" : "Component",
+  "revision" : "2.2.2",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.codehaus.plexus:plexus-classworlds:2.2.2"
+  }
+}, {
+  "@id" : "maven:org.apache.xbean/xbean-reflect/3.4",
+  "@type" : "Component",
+  "revision" : "3.4",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.apache.xbean:xbean-reflect:3.4"
+  }
+}, {
+  "@id" : "maven:org.apache.maven/maven-plugin-api/2.0.6",
+  "@type" : "Component",
+  "revision" : "2.0.6",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.apache.maven:maven-plugin-api:2.0.6"
+  }
+}, {
+  "@id" : "maven:org.apache.maven.plugins/maven-compiler-plugin/3.0",
+  "@type" : "Component",
+  "revision" : "3.0",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.apache.maven.plugins:maven-compiler-plugin:3.0"
+  },
+  "relationship" : [ {
+    "related" : "maven:org.apache.maven/maven-artifact/2.0.9",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.apache.maven/maven-toolchain/1.0",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.apache.maven.shared/maven-shared-utils/0.1",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.apache.maven.shared/maven-shared-incremental/1.0",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.codehaus.plexus/plexus-compiler-manager/2.0",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.codehaus.plexus/plexus-compiler-javac/2.0",
+    "relationshipType" : "DYNAMIC_LINK"
+  } ]
+}, {
+  "@id" : "maven:org.apache.maven/maven-artifact/2.0.9",
+  "@type" : "Component",
+  "revision" : "2.0.9",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.apache.maven:maven-artifact:2.0.9"
+  }
+}, {
+  "@id" : "maven:org.apache.maven/maven-toolchain/1.0",
+  "@type" : "Component",
+  "revision" : "1.0",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.apache.maven:maven-toolchain:1.0"
+  }
+}, {
+  "@id" : "maven:org.apache.maven.shared/maven-shared-utils/0.1",
+  "@type" : "Component",
+  "revision" : "0.1",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.apache.maven.shared:maven-shared-utils:0.1"
+  }
+}, {
+  "@id" : "maven:org.apache.maven.shared/maven-shared-incremental/1.0",
+  "@type" : "Component",
+  "revision" : "1.0",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.apache.maven.shared:maven-shared-incremental:1.0"
+  },
+  "relationship" : {
+    "related" : "maven:org.codehaus.plexus/plexus-component-annotations/1.5.5",
+    "relationshipType" : "DYNAMIC_LINK"
+  }
+}, {
+  "@id" : "maven:org.codehaus.plexus/plexus-component-annotations/1.5.5",
+  "@type" : "Component",
+  "revision" : "1.5.5",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.codehaus.plexus:plexus-component-annotations:1.5.5"
+  }
+}, {
+  "@id" : "maven:org.codehaus.plexus/plexus-compiler-manager/2.0",
+  "@type" : "Component",
+  "revision" : "2.0",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.codehaus.plexus:plexus-compiler-manager:2.0"
+  }
+}, {
+  "@id" : "maven:org.codehaus.plexus/plexus-compiler-javac/2.0",
+  "@type" : "Component",
+  "revision" : "2.0",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.codehaus.plexus:plexus-compiler-javac:2.0"
+  }
+}, {
+  "@id" : "maven:org.apache.maven/maven-core/2.0.6",
+  "@type" : "Component",
+  "revision" : "2.0.6",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.apache.maven:maven-core:2.0.6"
+  },
+  "relationship" : [ {
+    "related" : "maven:org.apache.maven/maven-settings/2.0.6",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.apache.maven.wagon/wagon-file/1.0-beta-2",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.apache.maven/maven-plugin-parameter-documenter/2.0.6",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.apache.maven.wagon/wagon-http-lightweight/1.0-beta-2",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.apache.maven.reporting/maven-reporting-api/2.0.6",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.apache.maven/maven-profile/2.0.6",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.apache.maven/maven-model/2.0.6",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.apache.maven.wagon/wagon-provider-api/1.0-beta-2",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.apache.maven/maven-repository-metadata/2.0.6",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.apache.maven/maven-error-diagnostics/2.0.6",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.apache.maven/maven-project/2.0.6",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:commons-cli/commons-cli/1.0",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.apache.maven.wagon/wagon-ssh-external/1.0-beta-2",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.apache.maven/maven-plugin-descriptor/2.0.6",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.codehaus.plexus/plexus-interactivity-api/1.0-alpha-4",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.apache.maven/maven-artifact-manager/2.0.6",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.apache.maven/maven-monitor/2.0.6",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.apache.maven.wagon/wagon-ssh/1.0-beta-2",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:classworlds/classworlds/1.1",
+    "relationshipType" : "DYNAMIC_LINK"
+  } ]
+}, {
+  "@id" : "maven:org.apache.maven/maven-settings/2.0.6",
+  "@type" : "Component",
+  "revision" : "2.0.6",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.apache.maven:maven-settings:2.0.6"
+  }
+}, {
+  "@id" : "maven:org.apache.maven.wagon/wagon-file/1.0-beta-2",
+  "@type" : "Component",
+  "revision" : "1.0-beta-2",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.apache.maven.wagon:wagon-file:1.0-beta-2"
+  }
+}, {
+  "@id" : "maven:org.apache.maven/maven-plugin-parameter-documenter/2.0.6",
+  "@type" : "Component",
+  "revision" : "2.0.6",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.apache.maven:maven-plugin-parameter-documenter:2.0.6"
+  }
+}, {
+  "@id" : "maven:org.apache.maven.wagon/wagon-http-lightweight/1.0-beta-2",
+  "@type" : "Component",
+  "revision" : "1.0-beta-2",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.apache.maven.wagon:wagon-http-lightweight:1.0-beta-2"
+  },
+  "relationship" : {
+    "related" : "maven:org.apache.maven.wagon/wagon-http-shared/1.0-beta-2",
+    "relationshipType" : "DYNAMIC_LINK"
+  }
+}, {
+  "@id" : "maven:org.apache.maven.wagon/wagon-http-shared/1.0-beta-2",
+  "@type" : "Component",
+  "revision" : "1.0-beta-2",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.apache.maven.wagon:wagon-http-shared:1.0-beta-2"
+  },
+  "relationship" : {
+    "related" : "maven:jtidy/jtidy/4aug2000r7-dev",
+    "relationshipType" : "DYNAMIC_LINK"
+  }
+}, {
+  "@id" : "maven:jtidy/jtidy/4aug2000r7-dev",
+  "@type" : "Component",
+  "revision" : "4aug2000r7-dev",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "jtidy:jtidy:4aug2000r7-dev"
+  }
+}, {
+  "@id" : "maven:org.apache.maven.reporting/maven-reporting-api/2.0.6",
+  "@type" : "Component",
+  "revision" : "2.0.6",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.apache.maven.reporting:maven-reporting-api:2.0.6"
+  },
+  "relationship" : {
+    "related" : "maven:org.apache.maven.doxia/doxia-sink-api/1.0-alpha-7",
+    "relationshipType" : "DYNAMIC_LINK"
+  }
+}, {
+  "@id" : "maven:org.apache.maven.doxia/doxia-sink-api/1.0-alpha-7",
+  "@type" : "Component",
+  "revision" : "1.0-alpha-7",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.apache.maven.doxia:doxia-sink-api:1.0-alpha-7"
+  }
+}, {
+  "@id" : "maven:org.apache.maven/maven-profile/2.0.6",
+  "@type" : "Component",
+  "revision" : "2.0.6",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.apache.maven:maven-profile:2.0.6"
+  }
+}, {
+  "@id" : "maven:org.apache.maven/maven-model/2.0.6",
+  "@type" : "Component",
+  "revision" : "2.0.6",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.apache.maven:maven-model:2.0.6"
+  }
+}, {
+  "@id" : "maven:org.apache.maven.wagon/wagon-provider-api/1.0-beta-2",
+  "@type" : "Component",
+  "revision" : "1.0-beta-2",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.apache.maven.wagon:wagon-provider-api:1.0-beta-2"
+  }
+}, {
+  "@id" : "maven:org.apache.maven/maven-repository-metadata/2.0.6",
+  "@type" : "Component",
+  "revision" : "2.0.6",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.apache.maven:maven-repository-metadata:2.0.6"
+  }
+}, {
+  "@id" : "maven:org.apache.maven/maven-error-diagnostics/2.0.6",
+  "@type" : "Component",
+  "revision" : "2.0.6",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.apache.maven:maven-error-diagnostics:2.0.6"
+  }
+}, {
+  "@id" : "maven:org.apache.maven/maven-project/2.0.6",
+  "@type" : "Component",
+  "revision" : "2.0.6",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.apache.maven:maven-project:2.0.6"
+  },
+  "relationship" : {
+    "related" : "maven:org.apache.maven/maven-plugin-registry/2.0.6",
+    "relationshipType" : "DYNAMIC_LINK"
+  }
+}, {
+  "@id" : "maven:org.apache.maven/maven-plugin-registry/2.0.6",
+  "@type" : "Component",
+  "revision" : "2.0.6",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.apache.maven:maven-plugin-registry:2.0.6"
+  }
+}, {
+  "@id" : "maven:commons-cli/commons-cli/1.0",
+  "@type" : "Component",
+  "revision" : "1.0",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "commons-cli:commons-cli:1.0"
+  }
+}, {
+  "@id" : "maven:org.apache.maven.wagon/wagon-ssh-external/1.0-beta-2",
+  "@type" : "Component",
+  "revision" : "1.0-beta-2",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.apache.maven.wagon:wagon-ssh-external:1.0-beta-2"
+  },
+  "relationship" : {
+    "related" : "maven:org.apache.maven.wagon/wagon-ssh-common/1.0-beta-2",
+    "relationshipType" : "DYNAMIC_LINK"
+  }
+}, {
+  "@id" : "maven:org.apache.maven.wagon/wagon-ssh-common/1.0-beta-2",
+  "@type" : "Component",
+  "revision" : "1.0-beta-2",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.apache.maven.wagon:wagon-ssh-common:1.0-beta-2"
+  }
+}, {
+  "@id" : "maven:org.apache.maven/maven-plugin-descriptor/2.0.6",
+  "@type" : "Component",
+  "revision" : "2.0.6",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.apache.maven:maven-plugin-descriptor:2.0.6"
+  }
+}, {
+  "@id" : "maven:org.codehaus.plexus/plexus-interactivity-api/1.0-alpha-4",
+  "@type" : "Component",
+  "revision" : "1.0-alpha-4",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.codehaus.plexus:plexus-interactivity-api:1.0-alpha-4"
+  }
+}, {
+  "@id" : "maven:org.apache.maven/maven-artifact-manager/2.0.6",
+  "@type" : "Component",
+  "revision" : "2.0.6",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.apache.maven:maven-artifact-manager:2.0.6"
+  }
+}, {
+  "@id" : "maven:org.apache.maven/maven-monitor/2.0.6",
+  "@type" : "Component",
+  "revision" : "2.0.6",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.apache.maven:maven-monitor:2.0.6"
+  }
+}, {
+  "@id" : "maven:org.apache.maven.wagon/wagon-ssh/1.0-beta-2",
+  "@type" : "Component",
+  "revision" : "1.0-beta-2",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.apache.maven.wagon:wagon-ssh:1.0-beta-2"
+  },
+  "relationship" : {
+    "related" : "maven:com.jcraft/jsch/0.1.27",
+    "relationshipType" : "DYNAMIC_LINK"
+  }
+}, {
+  "@id" : "maven:com.jcraft/jsch/0.1.27",
+  "@type" : "Component",
+  "revision" : "0.1.27",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "com.jcraft:jsch:0.1.27"
+  }
+}, {
+  "@id" : "maven:classworlds/classworlds/1.1",
+  "@type" : "Component",
+  "revision" : "1.1",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "classworlds:classworlds:1.1"
+  }
+}, {
+  "@id" : "maven:org.codehaus.groovy/groovy-all/2.4.3",
+  "@type" : "Component",
+  "revision" : "2.4.3",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.codehaus.groovy:groovy-all:2.4.3"
+  }
+}, {
+  "@id" : "maven:org.eclipse.jetty/jetty-util/9.2.9.v20150224",
+  "@type" : "Component",
+  "revision" : "9.2.9.v20150224",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.eclipse.jetty:jetty-util:9.2.9.v20150224"
+  }
+}, {
+  "@id" : "maven:backport-util-concurrent/backport-util-concurrent/3.1",
+  "@type" : "Component",
+  "revision" : "3.1",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "backport-util-concurrent:backport-util-concurrent:3.1"
+  }
+}, {
+  "@id" : "maven:com.att.aft.discovery/discovery-clt/5.1.3-01",
+  "@type" : "Component",
+  "revision" : "5.1.3-01",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "com.att.aft.discovery:discovery-clt:5.1.3-01"
+  }
+}, {
+  "@id" : "maven:com.att.aft.fusion/ctx-factory/1.12",
+  "@type" : "Component",
+  "revision" : "1.12",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "com.att.aft.fusion:ctx-factory:1.12"
+  }
+}, {
+  "@id" : "maven:com.att.aft.discovery/discovery-ctx/5.1.3-15",
+  "@type" : "Component",
+  "revision" : "5.1.3-15",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "com.att.aft.discovery:discovery-ctx:5.1.3-15"
+  },
+  "relationship" : [ {
+    "related" : "maven:com.att.mq.ibm.mqi/connector/7.5.0.5-IT10725",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:com.att.mq.ibm.mqi/com.ibm.mq.commonservices/7.5.0.5-IT10725",
+    "relationshipType" : "DYNAMIC_LINK"
+  } ]
+}, {
+  "@id" : "maven:com.att.mq.ibm.mqi/connector/7.5.0.5-IT10725",
+  "@type" : "Component",
+  "revision" : "7.5.0.5-IT10725",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "com.att.mq.ibm.mqi:connector:7.5.0.5-IT10725"
+  }
+}, {
+  "@id" : "maven:com.att.mq.ibm.mqi/com.ibm.mq.commonservices/7.5.0.5-IT10725",
+  "@type" : "Component",
+  "revision" : "7.5.0.5-IT10725",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "com.att.mq.ibm.mqi:com.ibm.mq.commonservices:7.5.0.5-IT10725"
+  }
+}, {
+  "@id" : "maven:org.apache.camel/camel-core/2.15.5",
+  "@type" : "Component",
+  "revision" : "2.15.5",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.apache.camel:camel-core:2.15.5"
+  },
+  "relationship" : [ {
+    "related" : "maven:com.sun.xml.bind/jaxb-core/2.2.11",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:com.sun.xml.bind/jaxb-impl/2.2.11",
+    "relationshipType" : "DYNAMIC_LINK"
+  } ]
+}, {
+  "@id" : "maven:com.sun.xml.bind/jaxb-core/2.2.11",
+  "@type" : "Component",
+  "revision" : "2.2.11",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "com.sun.xml.bind:jaxb-core:2.2.11"
+  }
+}, {
+  "@id" : "maven:com.sun.xml.bind/jaxb-impl/2.2.11",
+  "@type" : "Component",
+  "revision" : "2.2.11",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "com.sun.xml.bind:jaxb-impl:2.2.11"
+  }
+}, {
+  "@id" : "maven:org.apache.camel/camel-quartz/2.15.5",
+  "@type" : "Component",
+  "revision" : "2.15.5",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.apache.camel:camel-quartz:2.15.5"
+  },
+  "relationship" : {
+    "related" : "maven:org.quartz-scheduler/quartz/1.8.6",
+    "relationshipType" : "DYNAMIC_LINK"
+  }
+}, {
+  "@id" : "maven:org.quartz-scheduler/quartz/1.8.6",
+  "@type" : "Component",
+  "revision" : "1.8.6",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.quartz-scheduler:quartz:1.8.6"
+  }
+}, {
+  "@id" : "maven:org.apache.camel/camel-spring/2.15.5",
+  "@type" : "Component",
+  "revision" : "2.15.5",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.apache.camel:camel-spring:2.15.5"
+  }
+}, {
+  "@id" : "maven:org.restlet.jee/org.restlet.ext.spring/2.2.1",
+  "@type" : "Component",
+  "revision" : "2.2.1",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.restlet.jee:org.restlet.ext.spring:2.2.1"
+  },
+  "relationship" : {
+    "related" : "maven:cglib/cglib-nodep/2.2",
+    "relationshipType" : "DYNAMIC_LINK"
+  }
+}, {
+  "@id" : "maven:cglib/cglib-nodep/2.2",
+  "@type" : "Component",
+  "revision" : "2.2",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "cglib:cglib-nodep:2.2"
+  }
+}, {
+  "@id" : "maven:org.apache.camel/camel-restlet/2.15.5",
+  "@type" : "Component",
+  "revision" : "2.15.5",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.apache.camel:camel-restlet:2.15.5"
+  },
+  "relationship" : {
+    "related" : "maven:org.restlet.jee/org.restlet.ext.httpclient/2.2.3",
+    "relationshipType" : "DYNAMIC_LINK"
+  }
+}, {
+  "@id" : "maven:org.restlet.jee/org.restlet.ext.httpclient/2.2.3",
+  "@type" : "Component",
+  "revision" : "2.2.3",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.restlet.jee:org.restlet.ext.httpclient:2.2.3"
+  },
+  "relationship" : [ {
+    "related" : "maven:org.apache.httpcomponents/httpmime/4.3",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:net.jcip/jcip-annotations/1.0",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.apache.james/apache-mime4j-core/0.7.2",
+    "relationshipType" : "DYNAMIC_LINK"
+  } ]
+}, {
+  "@id" : "maven:org.apache.httpcomponents/httpmime/4.3",
+  "@type" : "Component",
+  "revision" : "4.3",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.apache.httpcomponents:httpmime:4.3"
+  }
+}, {
+  "@id" : "maven:net.jcip/jcip-annotations/1.0",
+  "@type" : "Component",
+  "revision" : "1.0",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "net.jcip:jcip-annotations:1.0"
+  }
+}, {
+  "@id" : "maven:org.apache.james/apache-mime4j-core/0.7.2",
+  "@type" : "Component",
+  "revision" : "0.7.2",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.apache.james:apache-mime4j-core:0.7.2"
+  }
+}, {
+  "@id" : "maven:org.apache.camel/camel-servlet/2.15.5",
+  "@type" : "Component",
+  "revision" : "2.15.5",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.apache.camel:camel-servlet:2.15.5"
+  },
+  "relationship" : {
+    "related" : "maven:org.apache.camel/camel-http/2.15.5",
+    "relationshipType" : "DYNAMIC_LINK"
+  }
+}, {
+  "@id" : "maven:org.apache.camel/camel-http/2.15.5",
+  "@type" : "Component",
+  "revision" : "2.15.5",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.apache.camel:camel-http:2.15.5"
+  },
+  "relationship" : {
+    "related" : "maven:commons-httpclient/commons-httpclient/3.1",
+    "relationshipType" : "DYNAMIC_LINK"
+  }
+}, {
+  "@id" : "maven:commons-httpclient/commons-httpclient/3.1",
+  "@type" : "Component",
+  "revision" : "3.1",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "commons-httpclient:commons-httpclient:3.1"
+  }
+}, {
+  "@id" : "maven:org.apache.camel/camel-http4/2.15.5",
+  "@type" : "Component",
+  "revision" : "2.15.5",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.apache.camel:camel-http4:2.15.5"
+  },
+  "relationship" : {
+    "related" : "maven:org.apache.geronimo.specs/geronimo-servlet_3.0_spec/1.0",
+    "relationshipType" : "DYNAMIC_LINK"
+  }
+}, {
+  "@id" : "maven:org.apache.geronimo.specs/geronimo-servlet_3.0_spec/1.0",
+  "@type" : "Component",
+  "revision" : "1.0",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.apache.geronimo.specs:geronimo-servlet_3.0_spec:1.0"
+  }
+}, {
+  "@id" : "maven:org.apache.camel/camel-groovy/2.15.5",
+  "@type" : "Component",
+  "revision" : "2.15.5",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.apache.camel:camel-groovy:2.15.5"
+  }
+}, {
+  "@id" : "maven:org.apache.camel/camel-twitter/2.15.5",
+  "@type" : "Component",
+  "revision" : "2.15.5",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.apache.camel:camel-twitter:2.15.5"
+  },
+  "relationship" : [ {
+    "related" : "maven:org.twitter4j/twitter4j-core/4.0.3",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.twitter4j/twitter4j-stream/4.0.3",
+    "relationshipType" : "DYNAMIC_LINK"
+  } ]
+}, {
+  "@id" : "maven:org.twitter4j/twitter4j-core/4.0.3",
+  "@type" : "Component",
+  "revision" : "4.0.3",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.twitter4j:twitter4j-core:4.0.3"
+  }
+}, {
+  "@id" : "maven:org.twitter4j/twitter4j-stream/4.0.3",
+  "@type" : "Component",
+  "revision" : "4.0.3",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.twitter4j:twitter4j-stream:4.0.3"
+  }
+}, {
+  "@id" : "maven:org.apache.camel/camel-mail/2.15.5",
+  "@type" : "Component",
+  "revision" : "2.15.5",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.apache.camel:camel-mail:2.15.5"
+  },
+  "relationship" : {
+    "related" : "maven:javax.mail/mail/1.4.7",
+    "relationshipType" : "DYNAMIC_LINK"
+  }
+}, {
+  "@id" : "maven:javax.mail/mail/1.4.7",
+  "@type" : "Component",
+  "revision" : "1.4.7",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "javax.mail:mail:1.4.7"
+  }
+}, {
+  "@id" : "maven:org.apache.camel/camel-smpp/2.15.5",
+  "@type" : "Component",
+  "revision" : "2.15.5",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.apache.camel:camel-smpp:2.15.5"
+  },
+  "relationship" : [ {
+    "related" : "maven:org.jsmpp/jsmpp/2.1.1",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:commons-codec/commons-codec/1.10",
+    "relationshipType" : "DYNAMIC_LINK"
+  } ]
+}, {
+  "@id" : "maven:org.jsmpp/jsmpp/2.1.1",
+  "@type" : "Component",
+  "revision" : "2.1.1",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.jsmpp:jsmpp:2.1.1"
+  }
+}, {
+  "@id" : "maven:commons-codec/commons-codec/1.10",
+  "@type" : "Component",
+  "revision" : "1.10",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "commons-codec:commons-codec:1.10"
+  }
+}, {
+  "@id" : "maven:org.apache.camel/camel-jms/2.15.5",
+  "@type" : "Component",
+  "revision" : "2.15.5",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.apache.camel:camel-jms:2.15.5"
+  },
+  "relationship" : {
+    "related" : "maven:org.springframework/spring-jms/4.1.6.RELEASE",
+    "relationshipType" : "DYNAMIC_LINK"
+  }
+}, {
+  "@id" : "maven:org.springframework/spring-jms/4.1.6.RELEASE",
+  "@type" : "Component",
+  "revision" : "4.1.6.RELEASE",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.springframework:spring-jms:4.1.6.RELEASE"
+  },
+  "relationship" : {
+    "related" : "maven:org.springframework/spring-messaging/4.1.6.RELEASE",
+    "relationshipType" : "DYNAMIC_LINK"
+  }
+}, {
+  "@id" : "maven:org.springframework/spring-messaging/4.1.6.RELEASE",
+  "@type" : "Component",
+  "revision" : "4.1.6.RELEASE",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.springframework:spring-messaging:4.1.6.RELEASE"
+  }
+}, {
+  "@id" : "maven:org.apache.camel/camel-script/2.15.5",
+  "@type" : "Component",
+  "revision" : "2.15.5",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.apache.camel:camel-script:2.15.5"
+  }
+}, {
+  "@id" : "maven:org.apache.camel/camel-xmpp/2.15.5",
+  "@type" : "Component",
+  "revision" : "2.15.5",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.apache.camel:camel-xmpp:2.15.5"
+  },
+  "relationship" : [ {
+    "related" : "maven:org.igniterealtime.smack/smack-core/4.0.7",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.igniterealtime.smack/smack-extensions/4.0.7",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.igniterealtime.smack/smack-tcp/4.0.7",
+    "relationshipType" : "DYNAMIC_LINK"
+  } ]
+}, {
+  "@id" : "maven:org.igniterealtime.smack/smack-core/4.0.7",
+  "@type" : "Component",
+  "revision" : "4.0.7",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.igniterealtime.smack:smack-core:4.0.7"
+  },
+  "relationship" : {
+    "related" : "maven:xpp3/xpp3/1.1.4c",
+    "relationshipType" : "DYNAMIC_LINK"
+  }
+}, {
+  "@id" : "maven:xpp3/xpp3/1.1.4c",
+  "@type" : "Component",
+  "revision" : "1.1.4c",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "xpp3:xpp3:1.1.4c"
+  }
+}, {
+  "@id" : "maven:org.igniterealtime.smack/smack-extensions/4.0.7",
+  "@type" : "Component",
+  "revision" : "4.0.7",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.igniterealtime.smack:smack-extensions:4.0.7"
+  }
+}, {
+  "@id" : "maven:org.igniterealtime.smack/smack-tcp/4.0.7",
+  "@type" : "Component",
+  "revision" : "4.0.7",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.igniterealtime.smack:smack-tcp:4.0.7"
+  }
+}, {
+  "@id" : "maven:org.apache.camel/camel-velocity/2.15.5",
+  "@type" : "Component",
+  "revision" : "2.15.5",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.apache.camel:camel-velocity:2.15.5"
+  },
+  "relationship" : {
+    "related" : "maven:org.apache.velocity/velocity/1.7",
+    "relationshipType" : "DYNAMIC_LINK"
+  }
+}, {
+  "@id" : "maven:org.apache.velocity/velocity/1.7",
+  "@type" : "Component",
+  "revision" : "1.7",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.apache.velocity:velocity:1.7"
+  }
+}, {
+  "@id" : "maven:org.springframework/spring-core/3.2.4.RELEASE",
+  "@type" : "Component",
+  "revision" : "3.2.4.RELEASE",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.springframework:spring-core:3.2.4.RELEASE"
+  }
+}, {
+  "@id" : "maven:org.springframework/spring-beans/3.2.4.RELEASE",
+  "@type" : "Component",
+  "revision" : "3.2.4.RELEASE",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.springframework:spring-beans:3.2.4.RELEASE"
+  }
+}, {
+  "@id" : "maven:org.springframework/spring-expression/3.2.4.RELEASE",
+  "@type" : "Component",
+  "revision" : "3.2.4.RELEASE",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.springframework:spring-expression:3.2.4.RELEASE"
+  }
+}, {
+  "@id" : "maven:org.restlet.jee/org.restlet/2.2.1",
+  "@type" : "Component",
+  "revision" : "2.2.1",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.restlet.jee:org.restlet:2.2.1"
+  }
+}, {
+  "@id" : "maven:org.restlet.jee/org.restlet.ext.servlet/2.2.1",
+  "@type" : "Component",
+  "revision" : "2.2.1",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.restlet.jee:org.restlet.ext.servlet:2.2.1"
+  }
+}, {
+  "@id" : "maven:org.springframework/spring-web/3.2.4.RELEASE",
+  "@type" : "Component",
+  "revision" : "3.2.4.RELEASE",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.springframework:spring-web:3.2.4.RELEASE"
+  },
+  "relationship" : {
+    "related" : "maven:aopalliance/aopalliance/1.0",
+    "relationshipType" : "DYNAMIC_LINK"
+  }
+}, {
+  "@id" : "maven:aopalliance/aopalliance/1.0",
+  "@type" : "Component",
+  "revision" : "1.0",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "aopalliance:aopalliance:1.0"
+  }
+}, {
+  "@id" : "maven:org.springframework/spring-webmvc/3.2.4.RELEASE",
+  "@type" : "Component",
+  "revision" : "3.2.4.RELEASE",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.springframework:spring-webmvc:3.2.4.RELEASE"
+  }
+}, {
+  "@id" : "maven:org.springframework.security.oauth/spring-security-oauth2/1.0.5.RELEASE",
+  "@type" : "Component",
+  "revision" : "1.0.5.RELEASE",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.springframework.security.oauth:spring-security-oauth2:1.0.5.RELEASE"
+  }
+}, {
+  "@id" : "maven:org.codehaus.jackson/jackson-mapper-asl/1.9.13",
+  "@type" : "Component",
+  "revision" : "1.9.13",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.codehaus.jackson:jackson-mapper-asl:1.9.13"
+  }
+}, {
+  "@id" : "maven:org.codehaus.jackson/jackson-core-asl/1.9.13",
+  "@type" : "Component",
+  "revision" : "1.9.13",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.codehaus.jackson:jackson-core-asl:1.9.13"
+  }
+}, {
+  "@id" : "maven:org.springframework/spring-context/3.2.4.RELEASE",
+  "@type" : "Component",
+  "revision" : "3.2.4.RELEASE",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.springframework:spring-context:3.2.4.RELEASE"
+  }
+}, {
+  "@id" : "maven:org.springframework.security/spring-security-core/3.2.4.RELEASE",
+  "@type" : "Component",
+  "revision" : "3.2.4.RELEASE",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.springframework.security:spring-security-core:3.2.4.RELEASE"
+  }
+}, {
+  "@id" : "maven:org.springframework.security/spring-security-web/3.2.4.RELEASE",
+  "@type" : "Component",
+  "revision" : "3.2.4.RELEASE",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.springframework.security:spring-security-web:3.2.4.RELEASE"
+  }
+}, {
+  "@id" : "maven:org.springframework.security/spring-security-config/3.2.4.RELEASE",
+  "@type" : "Component",
+  "revision" : "3.2.4.RELEASE",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.springframework.security:spring-security-config:3.2.4.RELEASE"
+  }
+}, {
+  "@id" : "maven:org.springframework/spring-jmx/2.0.8",
+  "@type" : "Component",
+  "revision" : "2.0.8",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.springframework:spring-jmx:2.0.8"
+  }
+}, {
+  "@id" : "maven:junit/junit/4.11",
+  "@type" : "Component",
+  "revision" : "4.11",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "junit:junit:4.11"
+  },
+  "relationship" : {
+    "related" : "maven:org.hamcrest/hamcrest-core/1.3",
+    "relationshipType" : "DYNAMIC_LINK"
+  }
+}, {
+  "@id" : "maven:org.hamcrest/hamcrest-core/1.3",
+  "@type" : "Component",
+  "revision" : "1.3",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.hamcrest:hamcrest-core:1.3"
+  }
+}, {
+  "@id" : "maven:bsh/bsh/1.3.0",
+  "@type" : "Component",
+  "revision" : "1.3.0",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "bsh:bsh:1.3.0"
+  }
+}, {
+  "@id" : "maven:org.grails/grails-spring/2.3.1",
+  "@type" : "Component",
+  "revision" : "2.3.1",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.grails:grails-spring:2.3.1"
+  },
+  "relationship" : {
+    "related" : "maven:org.grails/grails-bootstrap/2.3.1",
+    "relationshipType" : "DYNAMIC_LINK"
+  }
+}, {
+  "@id" : "maven:org.grails/grails-bootstrap/2.3.1",
+  "@type" : "Component",
+  "revision" : "2.3.1",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.grails:grails-bootstrap:2.3.1"
+  }
+}, {
+  "@id" : "maven:org.apache.camel/camel-cxf/2.15.5",
+  "@type" : "Component",
+  "revision" : "2.15.5",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.apache.camel:camel-cxf:2.15.5"
+  },
+  "relationship" : [ {
+    "related" : "maven:org.apache.camel/camel-cxf-transport/2.15.5",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.apache.cxf/cxf-rt-frontend-jaxws/3.0.6",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.apache.cxf/cxf-rt-rs-security-oauth/3.0.6",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.apache.cxf/cxf-rt-features-clustering/3.0.6",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.apache.cxf/cxf-rt-bindings-soap/3.0.6",
+    "relationshipType" : "DYNAMIC_LINK"
+  } ]
+}, {
+  "@id" : "maven:org.apache.camel/camel-cxf-transport/2.15.5",
+  "@type" : "Component",
+  "revision" : "2.15.5",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.apache.camel:camel-cxf-transport:2.15.5"
+  }
+}, {
+  "@id" : "maven:org.apache.cxf/cxf-rt-frontend-jaxws/3.0.6",
+  "@type" : "Component",
+  "revision" : "3.0.6",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.apache.cxf:cxf-rt-frontend-jaxws:3.0.6"
+  },
+  "relationship" : [ {
+    "related" : "maven:xml-resolver/xml-resolver/1.2",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:asm/asm/3.3.1",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.apache.cxf/cxf-rt-bindings-xml/3.0.6",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.apache.cxf/cxf-rt-frontend-simple/3.0.6",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.apache.cxf/cxf-rt-ws-addr/3.0.6",
+    "relationshipType" : "DYNAMIC_LINK"
+  } ]
+}, {
+  "@id" : "maven:xml-resolver/xml-resolver/1.2",
+  "@type" : "Component",
+  "revision" : "1.2",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "xml-resolver:xml-resolver:1.2"
+  }
+}, {
+  "@id" : "maven:asm/asm/3.3.1",
+  "@type" : "Component",
+  "revision" : "3.3.1",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "asm:asm:3.3.1"
+  }
+}, {
+  "@id" : "maven:org.apache.cxf/cxf-rt-bindings-xml/3.0.6",
+  "@type" : "Component",
+  "revision" : "3.0.6",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.apache.cxf:cxf-rt-bindings-xml:3.0.6"
+  }
+}, {
+  "@id" : "maven:org.apache.cxf/cxf-rt-frontend-simple/3.0.6",
+  "@type" : "Component",
+  "revision" : "3.0.6",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.apache.cxf:cxf-rt-frontend-simple:3.0.6"
+  }
+}, {
+  "@id" : "maven:org.apache.cxf/cxf-rt-ws-addr/3.0.6",
+  "@type" : "Component",
+  "revision" : "3.0.6",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.apache.cxf:cxf-rt-ws-addr:3.0.6"
+  },
+  "relationship" : {
+    "related" : "maven:org.apache.cxf/cxf-rt-ws-policy/3.0.6",
+    "relationshipType" : "DYNAMIC_LINK"
+  }
+}, {
+  "@id" : "maven:org.apache.cxf/cxf-rt-ws-policy/3.0.6",
+  "@type" : "Component",
+  "revision" : "3.0.6",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.apache.cxf:cxf-rt-ws-policy:3.0.6"
+  },
+  "relationship" : {
+    "related" : "maven:org.apache.neethi/neethi/3.0.3",
+    "relationshipType" : "DYNAMIC_LINK"
+  }
+}, {
+  "@id" : "maven:org.apache.neethi/neethi/3.0.3",
+  "@type" : "Component",
+  "revision" : "3.0.3",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.apache.neethi:neethi:3.0.3"
+  }
+}, {
+  "@id" : "maven:org.apache.cxf/cxf-rt-rs-security-oauth/3.0.6",
+  "@type" : "Component",
+  "revision" : "3.0.6",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.apache.cxf:cxf-rt-rs-security-oauth:3.0.6"
+  },
+  "relationship" : [ {
+    "related" : "maven:org.apache.cxf/cxf-rt-rs-client/3.0.6",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:net.oauth.core/oauth-provider/20100527",
+    "relationshipType" : "DYNAMIC_LINK"
+  } ]
+}, {
+  "@id" : "maven:org.apache.cxf/cxf-rt-rs-client/3.0.6",
+  "@type" : "Component",
+  "revision" : "3.0.6",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.apache.cxf:cxf-rt-rs-client:3.0.6"
+  }
+}, {
+  "@id" : "maven:net.oauth.core/oauth-provider/20100527",
+  "@type" : "Component",
+  "revision" : "20100527",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "net.oauth.core:oauth-provider:20100527"
+  },
+  "relationship" : {
+    "related" : "maven:net.oauth.core/oauth/20100527",
+    "relationshipType" : "DYNAMIC_LINK"
+  }
+}, {
+  "@id" : "maven:net.oauth.core/oauth/20100527",
+  "@type" : "Component",
+  "revision" : "20100527",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "net.oauth.core:oauth:20100527"
+  }
+}, {
+  "@id" : "maven:org.apache.cxf/cxf-rt-features-clustering/3.0.6",
+  "@type" : "Component",
+  "revision" : "3.0.6",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.apache.cxf:cxf-rt-features-clustering:3.0.6"
+  }
+}, {
+  "@id" : "maven:org.apache.cxf/cxf-rt-bindings-soap/3.0.6",
+  "@type" : "Component",
+  "revision" : "3.0.6",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.apache.cxf:cxf-rt-bindings-soap:3.0.6"
+  },
+  "relationship" : [ {
+    "related" : "maven:org.apache.cxf/cxf-rt-wsdl/3.0.6",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.apache.cxf/cxf-rt-databinding-jaxb/3.0.6",
+    "relationshipType" : "DYNAMIC_LINK"
+  } ]
+}, {
+  "@id" : "maven:org.apache.cxf/cxf-rt-wsdl/3.0.6",
+  "@type" : "Component",
+  "revision" : "3.0.6",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.apache.cxf:cxf-rt-wsdl:3.0.6"
+  },
+  "relationship" : {
+    "related" : "maven:wsdl4j/wsdl4j/1.6.3",
+    "relationshipType" : "DYNAMIC_LINK"
+  }
+}, {
+  "@id" : "maven:wsdl4j/wsdl4j/1.6.3",
+  "@type" : "Component",
+  "revision" : "1.6.3",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "wsdl4j:wsdl4j:1.6.3"
+  }
+}, {
+  "@id" : "maven:org.apache.cxf/cxf-rt-databinding-jaxb/3.0.6",
+  "@type" : "Component",
+  "revision" : "3.0.6",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.apache.cxf:cxf-rt-databinding-jaxb:3.0.6"
+  }
+}, {
+  "@id" : "maven:org.apache.xmlbeans/xmlbeans-xmlpublic/2.6.0",
+  "@type" : "Component",
+  "revision" : "2.6.0",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.apache.xmlbeans:xmlbeans-xmlpublic:2.6.0"
+  }
+}, {
+  "@id" : "maven:commons-collections/commons-collections/3.2.2",
+  "@type" : "Component",
+  "revision" : "3.2.2",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "commons-collections:commons-collections:3.2.2"
+  }
+}, {
+  "@id" : "maven:com.att.camel/att-camel-dme2-servlet/2.15.5.0",
+  "@type" : "Component",
+  "revision" : "2.15.5.0",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "com.att.camel:att-camel-dme2-servlet:2.15.5.0"
+  },
+  "relationship" : [ {
+    "related" : "maven:org.apache.camel/camel-package-maven-plugin/2.15.5",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.apache.camel/apt/2.15.5",
+    "relationshipType" : "DYNAMIC_LINK"
+  } ]
+}, {
+  "@id" : "maven:org.apache.camel/camel-package-maven-plugin/2.15.5",
+  "@type" : "Component",
+  "revision" : "2.15.5",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.apache.camel:camel-package-maven-plugin:2.15.5"
+  },
+  "relationship" : {
+    "related" : "maven:org.apache.maven.reporting/maven-reporting-impl/2.0.5",
+    "relationshipType" : "DYNAMIC_LINK"
+  }
+}, {
+  "@id" : "maven:org.apache.maven.reporting/maven-reporting-impl/2.0.5",
+  "@type" : "Component",
+  "revision" : "2.0.5",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.apache.maven.reporting:maven-reporting-impl:2.0.5"
+  },
+  "relationship" : [ {
+    "related" : "maven:org.apache.maven.doxia/doxia-core/1.0",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.apache.maven.doxia/doxia-site-renderer/1.0",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.apache.maven.shared/maven-doxia-tools/1.0.2",
+    "relationshipType" : "DYNAMIC_LINK"
+  } ]
+}, {
+  "@id" : "maven:org.apache.maven.doxia/doxia-core/1.0",
+  "@type" : "Component",
+  "revision" : "1.0",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.apache.maven.doxia:doxia-core:1.0"
+  }
+}, {
+  "@id" : "maven:org.apache.maven.doxia/doxia-site-renderer/1.0",
+  "@type" : "Component",
+  "revision" : "1.0",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.apache.maven.doxia:doxia-site-renderer:1.0"
+  },
+  "relationship" : [ {
+    "related" : "maven:org.codehaus.plexus/plexus-i18n/1.0-beta-7",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.codehaus.plexus/plexus-velocity/1.1.7",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.apache.maven.doxia/doxia-decoration-model/1.0",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.apache.maven.doxia/doxia-module-apt/1.0",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.apache.maven.doxia/doxia-module-fml/1.0",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.apache.maven.doxia/doxia-module-xdoc/1.0",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.apache.maven.doxia/doxia-module-xhtml/1.0",
+    "relationshipType" : "DYNAMIC_LINK"
+  } ]
+}, {
+  "@id" : "maven:org.codehaus.plexus/plexus-i18n/1.0-beta-7",
+  "@type" : "Component",
+  "revision" : "1.0-beta-7",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.codehaus.plexus:plexus-i18n:1.0-beta-7"
+  }
+}, {
+  "@id" : "maven:org.codehaus.plexus/plexus-velocity/1.1.7",
+  "@type" : "Component",
+  "revision" : "1.1.7",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.codehaus.plexus:plexus-velocity:1.1.7"
+  }
+}, {
+  "@id" : "maven:org.apache.maven.doxia/doxia-decoration-model/1.0",
+  "@type" : "Component",
+  "revision" : "1.0",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.apache.maven.doxia:doxia-decoration-model:1.0"
+  }
+}, {
+  "@id" : "maven:org.apache.maven.doxia/doxia-module-apt/1.0",
+  "@type" : "Component",
+  "revision" : "1.0",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.apache.maven.doxia:doxia-module-apt:1.0"
+  }
+}, {
+  "@id" : "maven:org.apache.maven.doxia/doxia-module-fml/1.0",
+  "@type" : "Component",
+  "revision" : "1.0",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.apache.maven.doxia:doxia-module-fml:1.0"
+  }
+}, {
+  "@id" : "maven:org.apache.maven.doxia/doxia-module-xdoc/1.0",
+  "@type" : "Component",
+  "revision" : "1.0",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.apache.maven.doxia:doxia-module-xdoc:1.0"
+  }
+}, {
+  "@id" : "maven:org.apache.maven.doxia/doxia-module-xhtml/1.0",
+  "@type" : "Component",
+  "revision" : "1.0",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.apache.maven.doxia:doxia-module-xhtml:1.0"
+  }
+}, {
+  "@id" : "maven:org.apache.maven.shared/maven-doxia-tools/1.0.2",
+  "@type" : "Component",
+  "revision" : "1.0.2",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.apache.maven.shared:maven-doxia-tools:1.0.2"
+  }
+}, {
+  "@id" : "maven:org.apache.camel/apt/2.15.5",
+  "@type" : "Component",
+  "revision" : "2.15.5",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.apache.camel:apt:2.15.5"
+  },
+  "relationship" : {
+    "related" : "maven:org.apache.camel/spi-annotations/2.15.5",
+    "relationshipType" : "DYNAMIC_LINK"
+  }
+}, {
+  "@id" : "maven:org.apache.camel/spi-annotations/2.15.5",
+  "@type" : "Component",
+  "revision" : "2.15.5",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.apache.camel:spi-annotations:2.15.5"
+  }
+}, {
+  "@id" : "maven:com.github.fge/json-schema-validator/2.2.6",
+  "@type" : "Component",
+  "revision" : "2.2.6",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "com.github.fge:json-schema-validator:2.2.6"
+  },
+  "relationship" : [ {
+    "related" : "maven:com.google.code.findbugs/jsr305/3.0.0",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:joda-time/joda-time/2.3",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:com.googlecode.libphonenumber/libphonenumber/6.2",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:com.github.fge/json-schema-core/1.2.5",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:javax.mail/mailapi/1.4.3",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:net.sf.jopt-simple/jopt-simple/4.6",
+    "relationshipType" : "DYNAMIC_LINK"
+  } ]
+}, {
+  "@id" : "maven:com.google.code.findbugs/jsr305/3.0.0",
+  "@type" : "Component",
+  "revision" : "3.0.0",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "com.google.code.findbugs:jsr305:3.0.0"
+  }
+}, {
+  "@id" : "maven:joda-time/joda-time/2.3",
+  "@type" : "Component",
+  "revision" : "2.3",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "joda-time:joda-time:2.3"
+  }
+}, {
+  "@id" : "maven:com.googlecode.libphonenumber/libphonenumber/6.2",
+  "@type" : "Component",
+  "revision" : "6.2",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "com.googlecode.libphonenumber:libphonenumber:6.2"
+  }
+}, {
+  "@id" : "maven:com.github.fge/json-schema-core/1.2.5",
+  "@type" : "Component",
+  "revision" : "1.2.5",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "com.github.fge:json-schema-core:1.2.5"
+  },
+  "relationship" : [ {
+    "related" : "maven:com.github.fge/uri-template/0.9",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:com.github.fge/jackson-coreutils/1.8",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.mozilla/rhino/1.7R4",
+    "relationshipType" : "DYNAMIC_LINK"
+  } ]
+}, {
+  "@id" : "maven:com.github.fge/uri-template/0.9",
+  "@type" : "Component",
+  "revision" : "0.9",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "com.github.fge:uri-template:0.9"
+  },
+  "relationship" : {
+    "related" : "maven:com.github.fge/msg-simple/1.1",
+    "relationshipType" : "DYNAMIC_LINK"
+  }
+}, {
+  "@id" : "maven:com.github.fge/msg-simple/1.1",
+  "@type" : "Component",
+  "revision" : "1.1",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "com.github.fge:msg-simple:1.1"
+  },
+  "relationship" : {
+    "related" : "maven:com.github.fge/btf/1.2",
+    "relationshipType" : "DYNAMIC_LINK"
+  }
+}, {
+  "@id" : "maven:com.github.fge/btf/1.2",
+  "@type" : "Component",
+  "revision" : "1.2",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "com.github.fge:btf:1.2"
+  }
+}, {
+  "@id" : "maven:com.github.fge/jackson-coreutils/1.8",
+  "@type" : "Component",
+  "revision" : "1.8",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "com.github.fge:jackson-coreutils:1.8"
+  },
+  "relationship" : {
+    "related" : "maven:com.fasterxml.jackson.core/jackson-databind/2.2.3",
+    "relationshipType" : "DYNAMIC_LINK"
+  }
+}, {
+  "@id" : "maven:com.fasterxml.jackson.core/jackson-databind/2.2.3",
+  "@type" : "Component",
+  "revision" : "2.2.3",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "com.fasterxml.jackson.core:jackson-databind:2.2.3"
+  },
+  "relationship" : [ {
+    "related" : "maven:com.fasterxml.jackson.core/jackson-annotations/2.2.3",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:com.fasterxml.jackson.core/jackson-core/2.4.3",
+    "relationshipType" : "DYNAMIC_LINK"
+  } ]
+}, {
+  "@id" : "maven:com.fasterxml.jackson.core/jackson-annotations/2.2.3",
+  "@type" : "Component",
+  "revision" : "2.2.3",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "com.fasterxml.jackson.core:jackson-annotations:2.2.3"
+  }
+}, {
+  "@id" : "maven:com.fasterxml.jackson.core/jackson-core/2.4.3",
+  "@type" : "Component",
+  "revision" : "2.4.3",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "com.fasterxml.jackson.core:jackson-core:2.4.3"
+  }
+}, {
+  "@id" : "maven:org.mozilla/rhino/1.7R4",
+  "@type" : "Component",
+  "revision" : "1.7R4",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.mozilla:rhino:1.7R4"
+  }
+}, {
+  "@id" : "maven:javax.mail/mailapi/1.4.3",
+  "@type" : "Component",
+  "revision" : "1.4.3",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "javax.mail:mailapi:1.4.3"
+  },
+  "relationship" : {
+    "related" : "maven:javax.activation/activation/1.1",
+    "relationshipType" : "DYNAMIC_LINK"
+  }
+}, {
+  "@id" : "maven:javax.activation/activation/1.1",
+  "@type" : "Component",
+  "revision" : "1.1",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "javax.activation:activation:1.1"
+  }
+}, {
+  "@id" : "maven:net.sf.jopt-simple/jopt-simple/4.6",
+  "@type" : "Component",
+  "revision" : "4.6",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "net.sf.jopt-simple:jopt-simple:4.6"
+  }
+}, {
+  "@id" : "maven:org.springframework/spring-aop/3.2.4.RELEASE",
+  "@type" : "Component",
+  "revision" : "3.2.4.RELEASE",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.springframework:spring-aop:3.2.4.RELEASE"
+  }
+}, {
+  "@id" : "maven:org.springframework/spring-context-support/3.2.4.RELEASE",
+  "@type" : "Component",
+  "revision" : "3.2.4.RELEASE",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.springframework:spring-context-support:3.2.4.RELEASE"
+  }
+}, {
+  "@id" : "maven:org.springframework/spring-tx/3.2.4.RELEASE",
+  "@type" : "Component",
+  "revision" : "3.2.4.RELEASE",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.springframework:spring-tx:3.2.4.RELEASE"
+  }
+}, {
+  "@id" : "maven:org.springframework/spring-jdbc/3.2.4.RELEASE",
+  "@type" : "Component",
+  "revision" : "3.2.4.RELEASE",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.springframework:spring-jdbc:3.2.4.RELEASE"
+  }
+}, {
+  "@id" : "maven:org.springframework/spring-orm/3.2.4.RELEASE",
+  "@type" : "Component",
+  "revision" : "3.2.4.RELEASE",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.springframework:spring-orm:3.2.4.RELEASE"
+  }
+}, {
+  "@id" : "maven:org.springframework/spring-oxm/3.2.4.RELEASE",
+  "@type" : "Component",
+  "revision" : "3.2.4.RELEASE",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.springframework:spring-oxm:3.2.4.RELEASE"
+  }
+}, {
+  "@id" : "maven:org.springframework/spring-webmvc-portlet/3.2.4.RELEASE",
+  "@type" : "Component",
+  "revision" : "3.2.4.RELEASE",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.springframework:spring-webmvc-portlet:3.2.4.RELEASE"
+  }
+}, {
+  "@id" : "maven:org.springframework/spring-test/3.2.4.RELEASE",
+  "@type" : "Component",
+  "revision" : "3.2.4.RELEASE",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.springframework:spring-test:3.2.4.RELEASE"
+  }
+}, {
+  "@id" : "maven:commons-validator/commons-validator/1.3.1",
+  "@type" : "Component",
+  "revision" : "1.3.1",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "commons-validator:commons-validator:1.3.1"
+  },
+  "relationship" : [ {
+    "related" : "maven:commons-beanutils/commons-beanutils/1.7.0",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:commons-digester/commons-digester/1.6",
+    "relationshipType" : "DYNAMIC_LINK"
+  } ]
+}, {
+  "@id" : "maven:commons-beanutils/commons-beanutils/1.7.0",
+  "@type" : "Component",
+  "revision" : "1.7.0",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "commons-beanutils:commons-beanutils:1.7.0"
+  }
+}, {
+  "@id" : "maven:commons-digester/commons-digester/1.6",
+  "@type" : "Component",
+  "revision" : "1.6",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "commons-digester:commons-digester:1.6"
+  }
+}, {
+  "@id" : "maven:org.apache.camel/camel-ejb/2.15.5",
+  "@type" : "Component",
+  "revision" : "2.15.5",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.apache.camel:camel-ejb:2.15.5"
+  }
+}, {
+  "@id" : "maven:org.apache.openejb/openejb-core/4.5.2",
+  "@type" : "Component",
+  "revision" : "4.5.2",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.apache.openejb:openejb-core:4.5.2"
+  },
+  "relationship" : [ {
+    "related" : "maven:org.apache.openejb/mbean-annotation-api/4.5.2",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.apache.openejb/openejb-jpa-integration/4.5.2",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.apache.openejb/javaee-api/6.0-5",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.apache.commons/commons-lang3/3.1",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.apache.openejb/openejb-api/4.5.2",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.apache.openejb/openejb-loader/4.5.2",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.apache.openejb/openejb-javaagent/4.5.2",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.apache.openejb/openejb-jee/4.5.2",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.apache.activemq/activemq-ra/5.7.0",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.apache.geronimo.components/geronimo-connector/3.1.1",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.apache.geronimo.components/geronimo-transaction/3.1.1",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.objectweb.howl/howl/1.0.1-1",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.apache.geronimo.javamail/geronimo-javamail_1.4_mail/1.8.2",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.apache.xbean/xbean-asm-shaded/3.12",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.apache.xbean/xbean-finder-shaded/3.12",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.apache.xbean/xbean-naming/3.12",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.apache.xbean/xbean-bundleutils/3.12",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.hsqldb/hsqldb/2.2.8",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:commons-dbcp/commons-dbcp/1.4",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:commons-pool/commons-pool/1.5.7",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.codehaus.swizzle/swizzle-stream/1.6.1",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.apache.openwebbeans/openwebbeans-impl/1.1.8",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.apache.openwebbeans/openwebbeans-spi/1.1.8",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.apache.openwebbeans/openwebbeans-ejb/1.1.8",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.apache.openwebbeans/openwebbeans-ee/1.1.8",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.apache.openwebbeans/openwebbeans-ee-common/1.1.8",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.apache.openwebbeans/openwebbeans-web/1.1.8",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.javassist/javassist/3.17.1-GA",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.apache.openejb.patch/openjpa-asm-shaded/2.2.0",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.apache.bval/bval-core/0.5",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.apache.bval/bval-jsr303/0.5",
+    "relationshipType" : "DYNAMIC_LINK"
+  }, {
+    "related" : "maven:org.fusesource.jansi/jansi/1.8",
+    "relationshipType" : "DYNAMIC_LINK"
+  } ]
+}, {
+  "@id" : "maven:org.apache.openejb/mbean-annotation-api/4.5.2",
+  "@type" : "Component",
+  "revision" : "4.5.2",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.apache.openejb:mbean-annotation-api:4.5.2"
+  }
+}, {
+  "@id" : "maven:org.apache.openejb/openejb-jpa-integration/4.5.2",
+  "@type" : "Component",
+  "revision" : "4.5.2",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.apache.openejb:openejb-jpa-integration:4.5.2"
+  }
+}, {
+  "@id" : "maven:org.apache.openejb/javaee-api/6.0-5",
+  "@type" : "Component",
+  "revision" : "6.0-5",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.apache.openejb:javaee-api:6.0-5"
+  }
+}, {
+  "@id" : "maven:org.apache.commons/commons-lang3/3.1",
+  "@type" : "Component",
+  "revision" : "3.1",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.apache.commons:commons-lang3:3.1"
+  }
+}, {
+  "@id" : "maven:org.apache.openejb/openejb-api/4.5.2",
+  "@type" : "Component",
+  "revision" : "4.5.2",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.apache.openejb:openejb-api:4.5.2"
+  }
+}, {
+  "@id" : "maven:org.apache.openejb/openejb-loader/4.5.2",
+  "@type" : "Component",
+  "revision" : "4.5.2",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.apache.openejb:openejb-loader:4.5.2"
+  }
+}, {
+  "@id" : "maven:org.apache.openejb/openejb-javaagent/4.5.2",
+  "@type" : "Component",
+  "revision" : "4.5.2",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.apache.openejb:openejb-javaagent:4.5.2"
+  }
+}, {
+  "@id" : "maven:org.apache.openejb/openejb-jee/4.5.2",
+  "@type" : "Component",
+  "revision" : "4.5.2",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.apache.openejb:openejb-jee:4.5.2"
+  }
+}, {
+  "@id" : "maven:org.apache.activemq/activemq-ra/5.7.0",
+  "@type" : "Component",
+  "revision" : "5.7.0",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.apache.activemq:activemq-ra:5.7.0"
+  }
+}, {
+  "@id" : "maven:org.apache.geronimo.components/geronimo-connector/3.1.1",
+  "@type" : "Component",
+  "revision" : "3.1.1",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.apache.geronimo.components:geronimo-connector:3.1.1"
+  },
+  "relationship" : {
+    "related" : "maven:org.apache.geronimo.specs/geronimo-j2ee-connector_1.6_spec/1.0",
+    "relationshipType" : "DYNAMIC_LINK"
+  }
+}, {
+  "@id" : "maven:org.apache.geronimo.specs/geronimo-j2ee-connector_1.6_spec/1.0",
+  "@type" : "Component",
+  "revision" : "1.0",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.apache.geronimo.specs:geronimo-j2ee-connector_1.6_spec:1.0"
+  }
+}, {
+  "@id" : "maven:org.apache.geronimo.components/geronimo-transaction/3.1.1",
+  "@type" : "Component",
+  "revision" : "3.1.1",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.apache.geronimo.components:geronimo-transaction:3.1.1"
+  }
+}, {
+  "@id" : "maven:org.objectweb.howl/howl/1.0.1-1",
+  "@type" : "Component",
+  "revision" : "1.0.1-1",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.objectweb.howl:howl:1.0.1-1"
+  }
+}, {
+  "@id" : "maven:org.apache.geronimo.javamail/geronimo-javamail_1.4_mail/1.8.2",
+  "@type" : "Component",
+  "revision" : "1.8.2",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.apache.geronimo.javamail:geronimo-javamail_1.4_mail:1.8.2"
+  }
+}, {
+  "@id" : "maven:org.apache.xbean/xbean-asm-shaded/3.12",
+  "@type" : "Component",
+  "revision" : "3.12",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.apache.xbean:xbean-asm-shaded:3.12"
+  }
+}, {
+  "@id" : "maven:org.apache.xbean/xbean-finder-shaded/3.12",
+  "@type" : "Component",
+  "revision" : "3.12",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.apache.xbean:xbean-finder-shaded:3.12"
+  }
+}, {
+  "@id" : "maven:org.apache.xbean/xbean-naming/3.12",
+  "@type" : "Component",
+  "revision" : "3.12",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.apache.xbean:xbean-naming:3.12"
+  }
+}, {
+  "@id" : "maven:org.apache.xbean/xbean-bundleutils/3.12",
+  "@type" : "Component",
+  "revision" : "3.12",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.apache.xbean:xbean-bundleutils:3.12"
+  }
+}, {
+  "@id" : "maven:org.hsqldb/hsqldb/2.2.8",
+  "@type" : "Component",
+  "revision" : "2.2.8",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.hsqldb:hsqldb:2.2.8"
+  }
+}, {
+  "@id" : "maven:commons-dbcp/commons-dbcp/1.4",
+  "@type" : "Component",
+  "revision" : "1.4",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "commons-dbcp:commons-dbcp:1.4"
+  }
+}, {
+  "@id" : "maven:commons-pool/commons-pool/1.5.7",
+  "@type" : "Component",
+  "revision" : "1.5.7",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "commons-pool:commons-pool:1.5.7"
+  }
+}, {
+  "@id" : "maven:org.codehaus.swizzle/swizzle-stream/1.6.1",
+  "@type" : "Component",
+  "revision" : "1.6.1",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.codehaus.swizzle:swizzle-stream:1.6.1"
+  }
+}, {
+  "@id" : "maven:org.apache.openwebbeans/openwebbeans-impl/1.1.8",
+  "@type" : "Component",
+  "revision" : "1.1.8",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.apache.openwebbeans:openwebbeans-impl:1.1.8"
+  }
+}, {
+  "@id" : "maven:org.apache.openwebbeans/openwebbeans-spi/1.1.8",
+  "@type" : "Component",
+  "revision" : "1.1.8",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.apache.openwebbeans:openwebbeans-spi:1.1.8"
+  }
+}, {
+  "@id" : "maven:org.apache.openwebbeans/openwebbeans-ejb/1.1.8",
+  "@type" : "Component",
+  "revision" : "1.1.8",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.apache.openwebbeans:openwebbeans-ejb:1.1.8"
+  }
+}, {
+  "@id" : "maven:org.apache.openwebbeans/openwebbeans-ee/1.1.8",
+  "@type" : "Component",
+  "revision" : "1.1.8",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.apache.openwebbeans:openwebbeans-ee:1.1.8"
+  }
+}, {
+  "@id" : "maven:org.apache.openwebbeans/openwebbeans-ee-common/1.1.8",
+  "@type" : "Component",
+  "revision" : "1.1.8",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.apache.openwebbeans:openwebbeans-ee-common:1.1.8"
+  }
+}, {
+  "@id" : "maven:org.apache.openwebbeans/openwebbeans-web/1.1.8",
+  "@type" : "Component",
+  "revision" : "1.1.8",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.apache.openwebbeans:openwebbeans-web:1.1.8"
+  }
+}, {
+  "@id" : "maven:org.javassist/javassist/3.17.1-GA",
+  "@type" : "Component",
+  "revision" : "3.17.1-GA",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.javassist:javassist:3.17.1-GA"
+  }
+}, {
+  "@id" : "maven:org.apache.openejb.patch/openjpa-asm-shaded/2.2.0",
+  "@type" : "Component",
+  "revision" : "2.2.0",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.apache.openejb.patch:openjpa-asm-shaded:2.2.0"
+  },
+  "relationship" : {
+    "related" : "maven:net.sourceforge.serp/serp/1.13.1",
+    "relationshipType" : "DYNAMIC_LINK"
+  }
+}, {
+  "@id" : "maven:net.sourceforge.serp/serp/1.13.1",
+  "@type" : "Component",
+  "revision" : "1.13.1",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "net.sourceforge.serp:serp:1.13.1"
+  }
+}, {
+  "@id" : "maven:org.apache.bval/bval-core/0.5",
+  "@type" : "Component",
+  "revision" : "0.5",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.apache.bval:bval-core:0.5"
+  },
+  "relationship" : {
+    "related" : "maven:commons-beanutils/commons-beanutils-core/1.8.3",
+    "relationshipType" : "DYNAMIC_LINK"
+  }
+}, {
+  "@id" : "maven:commons-beanutils/commons-beanutils-core/1.8.3",
+  "@type" : "Component",
+  "revision" : "1.8.3",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "commons-beanutils:commons-beanutils-core:1.8.3"
+  }
+}, {
+  "@id" : "maven:org.apache.bval/bval-jsr303/0.5",
+  "@type" : "Component",
+  "revision" : "0.5",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.apache.bval:bval-jsr303:0.5"
+  }
+}, {
+  "@id" : "maven:org.fusesource.jansi/jansi/1.8",
+  "@type" : "Component",
+  "revision" : "1.8",
+  "externalIdentifier" : {
+    "externalSystemTypeId" : "maven",
+    "externalId" : "org.fusesource.jansi:jansi:1.8"
+  }
+} ]

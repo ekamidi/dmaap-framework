@@ -1,0 +1,501 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>com.att.ajsc</groupId>
+		<artifactId>ajsc-archetype-parent</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+		<relativePath></relativePath>
+	</parent>
+	<groupId>com.att.nsa</groupId>
+	<artifactId>dmaapMR1</artifactId>
+	<version>1.0.18-SNAPSHOT</version>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>2.10.4</version>
+				<configuration>
+					<additionalparam>-Xdoclint:none</additionalparam>
+				</configuration>
+				<executions>
+					<execution>
+						<id>attach-javadocs</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<version>3.0.0</version>
+				<executions>
+					<execution>
+						<id>attach-sources</id>
+						<goals>
+							<goal>jar-no-fork</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>		
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-release-plugin</artifactId>
+				<version>2.5.3</version>
+				<configuration>
+					<autoVersionSubmodules>true</autoVersionSubmodules>
+					<checkModificationExcludes>
+					</checkModificationExcludes>
+				</configuration>
+				<dependencies>
+					<dependency>
+						<groupId>org.apache.maven.scm</groupId>
+						<artifactId>maven-scm-provider-gitexe</artifactId>
+						<version>1.9.4</version>
+					</dependency>
+				</dependencies>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-deploy-plugin</artifactId>
+				<version>2.5</version>
+				<configuration>
+					<skip>true</skip>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>2.7</version>
+				<executions>
+					<execution>
+						<id>copy-docker-file</id>
+						<phase>package</phase>
+						<goals>
+							<goal>copy-resources</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>${dockerLocation}</outputDirectory>
+							<overwrite>true</overwrite>
+							<resources>
+								<resource>
+									<directory>${basedir}/src/main/resources/docker</directory>
+									<filtering>true</filtering>
+									<includes>
+										<include>**/*</include>
+									</includes>
+								</resource>
+							</resources>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>com.spotify</groupId>
+				<artifactId>docker-maven-plugin</artifactId>
+				<version>0.4.11</version>
+				<configuration>
+					<imageName>${docker.registry}/dmaapv1</imageName>
+					<dockerDirectory>${dockerLocation}</dockerDirectory>
+					<serverId>docker-hub</serverId>
+					<registryUrl>https://${docker.registry}</registryUrl>
+					<imageTags>
+						<imageTag>${project.version}</imageTag>
+						<imageTag>latest</imageTag>
+					</imageTags>
+					<forceTags>true</forceTags>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>com.blackducksoftware.integration</groupId>
+				<artifactId>hub-maven-plugin</artifactId>
+				<version>1.0.4</version>
+				<inherited>false</inherited>
+				<configuration>
+					<target>${project.basedir}</target>
+				</configuration>
+				<executions>
+					<execution>
+						<id>create-bdio-file</id>
+						<phase>package</phase>
+						<goals>
+							<goal>createHubOutput</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+
+	<properties>
+		<dockerLocation>${basedir}/target/swm/package/nix/dist_files/</dockerLocation>
+		<docker.registry>zlp11313.vci.att.com:5100</docker.registry>
+
+		<module.ajsc.namespace.name>dmaap</module.ajsc.namespace.name>
+		<module.ajsc.namespace.version>v1</module.ajsc.namespace.version>
+		<ajscRuntimeVersion>0.0.1-SNAPSHOT</ajscRuntimeVersion>
+
+		<!-- This will be the Absolute Root of the Project and should contain NO 
+			Versioning -->
+		<absoluteDistFilesRoot>/appl/${project.artifactId}</absoluteDistFilesRoot>
+		<!-- <absoluteDistFilesRoot>/opt/app/dmaap/${project.artifactId}</absoluteDistFilesRoot> -->
+		<!-- For Versioning upon installation, add /${project.version} to distFilesRoot. 
+			For NO Versioning, leave as is -->
+		<!-- example: /appl/${project.artifactId}/${project.version}. Also, add 
+			${project.version} to ${runAjscHome} for running locally. -->
+		<distFilesRoot>/appl/${project.artifactId}</distFilesRoot>
+		<!-- <distFilesRoot>/opt/app/dmaap/${project.artifactId}</distFilesRoot> -->
+		<runAjscHome>${basedir}/target/swm/package/nix/dist_files${distFilesRoot}</runAjscHome>
+
+		<!-- For SOA Cloud Installation <installOwnerUser>aft</installOwnerUser> 
+			<installOwnerGroup>aft</installOwnerGroup> <ownerManagementGroup>com.att.acsi.saat.dt.dmaap.dev</ownerManagementGroup> -->
+		<!-- For SOA Cloud Installation -->
+		<installOwnerUser>msgrtr</installOwnerUser>
+		<installOwnerGroup>dmaap</installOwnerGroup>
+		<ownerManagementGroup>com.att.acsi.saat.dt.dmaap.dev</ownerManagementGroup>
+		<!-- Port Selection. A value of 0 will allow for dynamic port selection. 
+			For local testing, you may choose to hardcode this value to something like 
+			8080 -->
+		<serverPort>3904</serverPort>
+		<sslport>3905</sslport>
+
+		<testRouteOffer>workstation</testRouteOffer>
+		<testEnv>DEV</testEnv>
+	</properties>
+
+	<!-- Distribution management -->
+
+
+	<!-- End Distribution management -->
+
+	<!-- The standard build tasks for this project are inherited from the parent. 
+		Please do not override the build tasks. However tasks and/or profiles can 
+		be included here as well as additional dependencies for your service. Any 
+		runtime or compile scope dependencies will be copied to the INSTALLATION_PATH/extJars 
+		folder and will be made available on the AJSC classpath for your service. 
+		Please, NOTE: DME2 and CSM related dependencies are EXTERNALIZED within the 
+		CSI environment. Therefore, they are provided within this project as "provided" 
+		dependencies. In order for the AJSC to run properly, locally, the CSM and 
+		DME2 dependencies will be copied into the target/commonLibs folder and will 
+		be made available to the classpath of the AJSC through the use of the system 
+		property, "AJSC_EXTERNAL_LIB_FOLDERS". This system property needs to be set 
+		in the "runAjsc" maven profile within the pom.xml (and, is defaulted to do 
+		so). If you have a startup failure related to a missing dme2 class not found 
+		exception, please contact the AJSC team for assistance. You can email support 
+		at ajsc-Support <DL-ajsc-Support@att.com>. For more information regarding 
+		the usage of the AJSC service pom.xml and management of dependencies, please 
+		goto wiki link:http://wiki.web.att.com/display/ajsc/pom.xml -->
+	<dependencies>
+
+		<!-- cmn-CommonDataModel dependency added to resolve build issue not finding 
+			version 100.0.64 -->
+		
+		<!-- <dependency>
+			<groupId>csi-schemas-source</groupId>
+			<artifactId>cmn-CommonDataModel</artifactId>
+			<version>112.0.50</version>
+		</dependency> -->
+	<!-- TODO: add open source version here -->
+		<dependency>
+			<groupId>com.att.cadi</groupId>
+			<artifactId>cadi-core</artifactId>
+			<version>1.3.0</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>2.4</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>1.3.2</version>
+		</dependency>
+		<dependency>
+			<groupId>com.att.nsa</groupId>
+			<artifactId>msgrtr</artifactId>
+			<version>0.0.5</version>
+			<exclusions>
+				<exclusion>
+					<groupId>org.slf4j</groupId>
+					<artifactId>slf4j-log4j12</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>com.att.ajsc</groupId>
+					<artifactId>ajsc-core</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.apache.tomcat</groupId>
+					<artifactId>tomcat-catalina</artifactId>
+				</exclusion>
+
+				<exclusion>
+					<groupId>org.apache.tomcat.embed</groupId>
+					<artifactId>tomcat-embed-core</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.apache.tomcat</groupId>
+					<artifactId>tomcat-util</artifactId>
+				</exclusion>
+				<!-- <exclusion> <groupId>com.att.nsa</groupId> <artifactId>saToolkit</artifactId> 
+					</exclusion> -->
+				<exclusion>
+					<groupId>com.att.nsa</groupId>
+					<artifactId>tomcat-util</artifactId>
+				</exclusion>
+
+			</exclusions>
+		</dependency>
+
+		<dependency>
+			<groupId>org.codehaus.jackson</groupId>
+			<artifactId>jackson-jaxrs</artifactId>
+			<version>1.9.13</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.json</groupId>
+			<artifactId>json</artifactId>
+			<version>20131018</version>
+		</dependency>
+
+		<!-- CXF JAX-RS extension -->
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-rs-extension-providers</artifactId>
+			<version>3.0.4</version>
+		</dependency>
+		<dependency>
+			<groupId>org.codehaus.jettison</groupId>
+			<artifactId>jettison</artifactId>
+			<version>1.3.7</version>
+		</dependency>
+		<!-- dme2 related dependencies -->
+		 <!-- <dependency>
+			<groupId>net.cingular.enterprise</groupId>
+			<artifactId>csm-framework</artifactId>
+			<version>${csm.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>net.cingular.enterprise</groupId>
+			<artifactId>csm-jmxsupport-jdk</artifactId>
+			<version>${csm.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>net.cingular.enterprise</groupId>
+			<artifactId>csm-jmx</artifactId>
+			<version>${csm.version}</version>
+			<scope>provided</scope>
+		</dependency> -->
+
+		<!-- For dom4j dependency ONLY! - If deploying to CSI env, remove "provided" 
+			scope. In CSI env, this jar MUST be included within service project's swm 
+			package -->
+		<dependency>
+			<groupId>dom4j</groupId>
+			<artifactId>dom4j</artifactId>
+			<version>1.6.1</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.att.aft</groupId>
+			<artifactId>dme2</artifactId>
+			<version>${dme2.version}</version>
+			<!-- <scope>provided</scope> -->
+		</dependency>
+		<dependency>
+		  <groupId>com.att.ajsc</groupId>
+		  <artifactId>ajsc-archetype-parent</artifactId>
+		  <version>0.0.1-SNAPSHOT</version>
+		  <type>pom</type>
+		</dependency>		
+	</dependencies>
+	<!-- <build> <resources> <resource> <directory>${basedir}/ajsc-shared-config/etc</directory> 
+		</resource> </resources> </build> -->
+	<profiles>
+		<!-- Use this profile to run the AJSC locally. This profile can be successfully 
+			shutdown WITHIN eclipse even in a Windows environment. Debugging is also 
+			available with this profile. -->
+		<profile>
+			<id>runAjsc</id>
+			<build>
+				<defaultGoal>initialize</defaultGoal>
+				<plugins>
+					<plugin>
+						<groupId>org.codehaus.mojo</groupId>
+						<artifactId>exec-maven-plugin</artifactId>
+						<version>1.3.2</version>
+						<executions>
+							<execution>
+								<phase>initialize</phase>
+								<goals>
+									<goal>java</goal>
+								</goals>
+								<configuration>
+									<!-- In order to better mimic a SOA cloud installation of AJSC (and 
+										to help eliminate Maven/Eclipse/AJSC classpath issues that may be difficult 
+										to diagnose), within this profile used to run locally, we are NOT including 
+										project dependencies. These will be loaded by AJSC from $AJSC_HOME/extJars. 
+										The only jar needed to run AJSC is the ajsc-runner.jar, and therefore is 
+										the only dependency required by this profile to run locally. -->
+									<includeProjectDependencies>false</includeProjectDependencies>
+									<includePluginDependencies>true</includePluginDependencies>
+									<executable>java</executable>
+									<mainClass>com.att.ajsc.runner.Runner</mainClass>
+									<executableDependency>
+										<groupId>com.att.ajsc</groupId>
+										<artifactId>ajsc-runner</artifactId>
+									</executableDependency>
+									<additionalClasspathElements>
+										<additionalClasspathElement>${basedir}/ajsc-shared-config/etc</additionalClasspathElement>
+									</additionalClasspathElements>
+
+									<environmentVariables>
+										<AJSC_HOME>${runAjscHome}</AJSC_HOME>
+									</environmentVariables>
+
+									<!-- Main AJSC System Properties below (necessary for proper startup) -->
+									<systemProperties>
+										<systemProperty>
+											<key>AJSC_HOME</key>
+											<value>${runAjscHome}</value>
+										</systemProperty>
+										<systemProperty>
+											<key>AJSC_HOME</key>
+											<value>${runAjscHome}</value>
+										</systemProperty>
+										<systemProperty>
+											<key>AJSC_CONF_HOME</key>
+											<value>${basedir}/bundleconfig-local</value>
+										</systemProperty>
+										<systemProperty>
+											<key>logback.configurationFile</key>
+											<value>${basedir}/ajsc-shared-config/etc/logback.xml</value>
+										</systemProperty>
+										<systemProperty>
+											<key>AJSC_SHARED_CONFIG</key>
+											<value>${basedir}/ajsc-shared-config</value>
+										</systemProperty>
+
+										<!-- Please, NOTE: The following 2 system properties will normally 
+											be set within the sys-props.properties file once deployed to a node. We are 
+											setting them HERE to run locally to make more efficient use of maven variable 
+											replacement for ${basedir} -->
+										<!-- AJSC_EXTERNAL_LIB_FOLDERS represents the particular jars that 
+											will be externalized on a CSI node. This includes dme2 and csm related artifact. -->
+										<sysproperty>
+											<key>AJSC_EXTERNAL_LIB_FOLDERS</key>
+											<value>${basedir}/target/commonLibs</value>
+										</sysproperty>
+										<!-- AJSC_EXTERNAL_PROPERTIES_FOLDERS represents the particular 
+											files that may need to be added to the classpath. These files will be externalized 
+											on a CSI node. This includes dme2 and csm related artifact (such as csm-config-app.properties). 
+											Failure to have these files on the classpath may result in errors thrown 
+											by csm framework. -->
+										<sysproperty>
+											<key>AJSC_EXTERNAL_PROPERTIES_FOLDERS</key>
+											<value>${basedir}/ajsc-shared-config/etc</value>
+										</sysproperty>
+
+										<systemProperty>
+											<key>AJSC_SERVICE_NAMESPACE</key>
+											<value>${module.ajsc.namespace.name}</value>
+										</systemProperty>
+										<systemProperty>
+											<key>AJSC_SERVICE_VERSION</key>
+											<value>${module.ajsc.namespace.version}</value>
+										</systemProperty>
+										<systemProperty>
+											<key>SOACLOUD_SERVICE_VERSION</key>
+											<value>${project.version}</value>
+										</systemProperty>
+										<systemProperty>
+											<key>server.port</key>
+											<value>${serverPort}</value>
+										</systemProperty>
+									</systemProperties>
+
+									<!-- Command Line Arguments to add to the java command. Here, you 
+										can specify the port as well as the Context you want your service to run 
+										in. Use context=/ to run in an unnamed Context (Root Context). The default 
+										configuration of the AJSC is to run under the / Context. Setting the port 
+										here can aid during the development phase of your service. However, you can 
+										leave this argument out entirely, and the AJSC will default to using an Ephemeral 
+										port. -->
+									<arguments>
+										<argument>context=/</argument>
+										<argument>port=${serverPort}</argument>
+										<argument>sslport=${sslport}</argument>
+									</arguments>
+								</configuration>
+							</execution>
+						</executions>
+						<configuration>
+							<executable>java</executable>
+						</configuration>
+						<dependencies>
+							<dependency>
+								<groupId>com.att.ajsc</groupId>
+								<artifactId>ajsc-runner</artifactId>
+								<version>${ajscRuntimeVersion}</version>
+							</dependency>
+						</dependencies>
+					</plugin>
+
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-resources-plugin</artifactId>
+						<version>2.7</version>
+						<executions>
+							<execution>
+								<id>copy-docker-file</id>
+								<phase>package</phase>
+								<goals>
+									<goal>copy-resources</goal>
+								</goals>
+								<configuration>
+									<outputDirectory>${dockerLocation}</outputDirectory>
+									<overwrite>true</overwrite>
+									<resources>
+										<resource>
+											<directory>${basedir}/src/main/resources/docker</directory>
+											<filtering>true</filtering>
+											<includes>
+												<include>**/*</include>
+											</includes>
+										</resource>
+									</resources>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+					<plugin>
+						<groupId>com.spotify</groupId>
+						<artifactId>docker-maven-plugin</artifactId>
+						<version>0.4.11</version>
+						<configuration>
+							<imageName>${docker.registry}/${project.artifactId}</imageName>
+							<dockerDirectory>${dockerLocation}</dockerDirectory>
+							<serverId>docker-hub</serverId>
+							<registryUrl>https://${docker.registry}</registryUrl>
+							<imageTags>
+								<imageTag>${project.version}</imageTag>
+								<imageTag>latest</imageTag>
+							</imageTags>
+							<forceTags>true</forceTags>
+						</configuration>
+					</plugin>
+
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
+
+</project>

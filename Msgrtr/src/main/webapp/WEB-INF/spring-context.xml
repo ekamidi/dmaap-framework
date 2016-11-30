@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    BSD License
+     
+    Copyright (c) 2016, AT&T Intellectual Property.  All other rights reserved.
+     
+    Redistribution and use in source and binary forms, with or without modification, are permitted
+    provided that the following conditions are met:
+     
+    1. Redistributions of source code must retain the above copyright notice, this list of conditions
+       and the following disclaimer.
+    2. Redistributions in binary form must reproduce the above copyright notice, this list of
+       conditions and the following disclaimer in the documentation and/or other materials provided
+       with the distribution.
+    3. All advertising materials mentioning features or use of this software must display the
+       following acknowledgement:  This product includes software developed by the AT&T.
+    4. Neither the name of AT&T nor the names of its contributors may be used to endorse or
+       promote products derived from this software without specific prior written permission.
+     
+    THIS SOFTWARE IS PROVIDED BY AT&T INTELLECTUAL PROPERTY ''AS IS'' AND ANY EXPRESS OR
+    IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+    MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT
+    SHALL AT&T INTELLECTUAL PROPERTY BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+    SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+    PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;  LOSS OF USE, DATA, OR PROFITS;
+    OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+    CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
+    ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH
+    DAMAGE.
+ -->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+	<!-- Dependency Injection with annotations -->
+	<context:component-scan
+		base-package="com.att.nsa.cambria.utils, com.att.nsa.cambria, com.att.nsa.cambria.rest,
+	com.att.nsa.cambria.service.impl,com.att.nsa.cambria.beans,com.att.nsa.cambria.security,
+	com.att.nsa.cambria.transaction,com.att.nsa.cambria.exception" />
+
+	<context:property-placeholder
+		location="classpath:msgRtrApi.properties,classpath:DMaaPErrorMesaages.properties" />
+
+
+	<bean id="propertyReader" class="com.att.nsa.cambria.utils.PropertyReader" />
+	<bean
+		class="org.springframework.beans.factory.config.MethodInvokingFactoryBean">
+		<!-- Next value is the full qualified name of the static setter including 
+			method name -->
+		<property name="staticMethod"
+			value="com.att.nsa.cambria.beans.DMaaPKafkaConsumerFactory.populateKafkaInternalDefaultsMap" />
+		<property name="arguments">
+			<list>
+				<ref bean="propertyReader" />
+			</list>
+		</property>
+	</bean>
+
+	<bean id="drumlinRequestRouter"
+		class="com.att.nsa.drumlin.service.framework.routing.DrumlinRequestRouter" />
+
+	<bean id="dMaaPMetricsSet" class="com.att.nsa.cambria.beans.DMaaPMetricsSet">
+		<constructor-arg ref="propertyReader" />
+	</bean>
+
+	<bean id="dMaaPZkClient" class=" com.att.nsa.cambria.beans.DMaaPZkClient">
+		<constructor-arg ref="propertyReader" />
+	</bean>
+
+	<bean id="dMaaPZkConfigDb" class=" com.att.nsa.cambria.beans.DMaaPZkConfigDb">
+		<constructor-arg ref="dMaaPZkClient" />
+		<constructor-arg ref="propertyReader" />
+	</bean>
+
+	<bean id="kafkaPublisher" class=" com.att.nsa.cambria.backends.kafka.KafkaPublisher">
+		<constructor-arg ref="propertyReader" />
+	</bean>
+
+	<bean id="dMaaPKafkaConsumerFactory" class=" com.att.nsa.cambria.beans.DMaaPKafkaConsumerFactory">
+		<constructor-arg ref="propertyReader" />
+		<constructor-arg ref="dMaaPMetricsSet" />
+		<constructor-arg ref="curator" />
+	</bean>
+
+	<bean id="curator" class="com.att.nsa.cambria.utils.DMaaPCuratorFactory"
+		factory-method="getCurator">
+		<constructor-arg ref="propertyReader" />
+	</bean>
+
+	<bean id="dMaaPKafkaMetaBroker" class=" com.att.nsa.cambria.beans.DMaaPKafkaMetaBroker">
+		<constructor-arg ref="propertyReader" />
+		<constructor-arg ref="dMaaPZkClient" />
+		<constructor-arg ref="dMaaPZkConfigDb" />
+	</bean>
+
+	<bean id="q" class=" com.att.nsa.cambria.backends.memory.MemoryQueue" />
+
+	<bean id="mmb" class=" com.att.nsa.cambria.backends.memory.MemoryMetaBroker">
+		<constructor-arg ref="q" />
+		<constructor-arg ref="dMaaPZkConfigDb" />
+	<!-- <constructor-arg ref="propertyReader" />-->
+	</bean>
+
+	<bean id="dMaaPNsaApiDb" class="com.att.nsa.cambria.beans.DMaaPNsaApiDb"
+		factory-method="buildApiKeyDb">
+		<constructor-arg ref="propertyReader" />
+		<constructor-arg ref="dMaaPZkConfigDb" />
+	</bean>
+
+	<!-- <bean id="dMaaPTranDb" class="com.att.nsa.cambria.transaction.DMaaPTransactionDB" 
+		factory-method="buildTransactionDb"> <constructor-arg ref="propertyReader" 
+		/> <constructor-arg ref="dMaaPZkConfigDb" /> </bean> -->
+
+	<bean id="dMaaPAuthenticatorImpl" class="com.att.nsa.cambria.security.DMaaPAuthenticatorImpl">
+		<constructor-arg ref="dMaaPNsaApiDb" />
+	</bean>
+	<bean id="defLength" class="com.att.nsa.filter.DefaultLength">
+		<property name="defaultLength" value="${maxcontentlength}"></property>
+	</bean>
+
+	<!-- <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"> 
+		<property name="location"> <value>msgRtrApi.properties</value> </property> 
+		</bean> -->
+
+</beans>
