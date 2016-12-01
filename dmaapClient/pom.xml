@@ -90,7 +90,7 @@
 		<dependency>
 			<groupId>com.att.aft</groupId>
 			<artifactId>dme2</artifactId>
-			<version>3.1.200-SNAPSHOT</version>
+			<version>3.1.200</version>
 		</dependency>
 		<!-- Begin - Dependency on log4j for logging purpose -->
 		<dependency>
