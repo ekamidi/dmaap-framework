@@ -47,8 +47,8 @@ public class JaxrsUserService {
 	private static final Map<String,String> userIdToNameMap;
 	static {
 		userIdToNameMap = new HashMap<String,String>();
-		userIdToNameMap.put("dw113c","Doug Wait");
-		userIdToNameMap.put("so401q","Stuart O'Day");
+		userIdToNameMap.put("user1","User One");
+		userIdToNameMap.put("user2","User Two");
 	}
 	
     /**
