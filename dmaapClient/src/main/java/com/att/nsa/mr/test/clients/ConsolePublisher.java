@@ -50,7 +50,7 @@ public class ConsolePublisher
 	public static void main ( String[] args ) throws IOException //throws IOException, InterruptedException
 	{
 		// read the hosts(s) from the command line
-		final String hosts = ( args.length > 0 ? args[0] : "ueb01hydc.it.att.com,ueb02hydc.it.att.com,ueb03hydc.it.att.com" );
+		final String hosts = ( args.length > 0 ? args[0] : "aaa.it.att.com,bbb.it.att.com,ccc.it.att.com" );
 
 		// read the topic name from the command line
 		final String topic = ( args.length > 1 ? args[1] : "TEST-TOPIC" );

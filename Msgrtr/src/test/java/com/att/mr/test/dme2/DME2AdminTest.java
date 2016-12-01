@@ -103,7 +103,7 @@ public class DME2AdminTest extends TestCase {
 			sender.setPayload("");
 			sender.addHeader("Content-Type", contentType);
 			
-			sender.addHeader("X-CambriaAuth", "rs873m:7J49YriFlyRgebyOsSJhZvY/C60=");
+			sender.addHeader("X-CambriaAuth", "user1:7J49YriFlyRgebyOsSJhZvY/C60=");
 			sender.addHeader("X-X-CambriaDate", "2016-10-18T09:56:04-05:00");
 			
 			//sender.setCredentials(user, password);

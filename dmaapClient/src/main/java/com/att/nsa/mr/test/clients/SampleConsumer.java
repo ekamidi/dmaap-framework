@@ -42,14 +42,7 @@ public class SampleConsumer {
 	public static void main ( String[] args )
 	{
 		final Logger LOG = LoggerFactory.getLogger(SampleConsumer.class);
-		/*if ( args.length < 1 )
-		{
-			System.err.println ( "A topic name is required." );
-			System.exit ( 1 );
-		}
-		
-		final String topic = args[0];
-		final String url = ( args.length > 1 ? args[1] : "ueb01hydc.it.att.com,ueb02hydc.it.att.com,ueb03hydc.it.att.com" );*/
+
 		
 		LOG.info("Sample Consumer Class executing");
 		final String topic = "com.att.app.dmaap.mr.testingTopic";

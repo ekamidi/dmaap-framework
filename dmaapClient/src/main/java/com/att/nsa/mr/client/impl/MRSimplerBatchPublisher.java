@@ -762,13 +762,6 @@ private MRPublisherResponse createMRPublisherResponse(String reply, MRPublisherR
 			contentType = props.getProperty("contenttype");
 			handlers = props.getProperty("sessionstickinessrequired");
 			routerFilePath= props.getProperty("DME2preferredRouterFilePath");
-			//url = protocol + "://DME2SEARCH/" + "service=" + serviceName + "/" + "version=" + version + "/"		+ "envContext=" + env + "/" + "partner=" + partner;
-			//url = protocol + "://DME2LOCAL/" + "service=" + serviceName + "/" + "version=" + version + "/"	+ "envContext=" + env + "/" + "routerOffer=" + partner;
-			
-			//url = protocol + "://DME2LOCAL/" + "service=" + serviceName + "?" + "version=" + version + "&"	+ "envContext=" + env + "&" + "routerOffer=" + partner;
-		//	url = protocol + "://olsd005.wnsnet.attws.com:3904/events/com.att.ecomp_test.crm.preDemo?" + "version=" + version + "&"	+ "envContext=" + env + "&" + "routerOffer=" + partner;
-			// url = "http://dmaap-v1.dev.dmaap.dt.saat.acsi.att.com/events?version=0.0.9&envContext=DEV&routeOffer=MR1";
-			//url = protocol + "://"+serviceName+"?version="+version+"&envContext="+env+"&routeOffer="+routeOffer;
 			
 			/**
 			 * Changes to DME2Client url to use Partner for auto failover between data centers

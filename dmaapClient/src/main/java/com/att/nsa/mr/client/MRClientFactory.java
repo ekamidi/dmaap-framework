@@ -79,7 +79,7 @@ public class MRClientFactory
 	 * across sessions.
 	 * 
 	 * @param hostList A comma separated list of hosts to use to connect to MR.
-	 * You can include port numbers (3904 is the default). For example, "ueb01hydc.it.att.com:8080,ueb02hydc.it.att.com"
+	 * You can include port numbers (3904 is the default). For example, "hostname:8080,"
 	 * 
 	 * @param topic The topic to consume
 	 * 

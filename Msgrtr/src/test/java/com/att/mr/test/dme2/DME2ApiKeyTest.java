@@ -71,7 +71,7 @@ public class DME2ApiKeyTest extends TestCase {
 	public void testCreateKey() {
 		LOGGER.info("Create Key test case initiated");
 
-		ApiKeyBean apiKeyBean = new ApiKeyBean("rs873m@us.att.com", "Creating Api Key.m");
+		ApiKeyBean apiKeyBean = new ApiKeyBean("user1@us.att.com", "Creating Api Key.m");
 
 		System.out.println(url);
 
@@ -135,7 +135,7 @@ public class DME2ApiKeyTest extends TestCase {
 
 	public void testGetOneKey() {
 		LOGGER.info("Test case get one key initiated");
-		ApiKeyBean apiKeyBean = new ApiKeyBean("rs873m@att.com", "Creating Api Key.m");
+		ApiKeyBean apiKeyBean = new ApiKeyBean("user1@att.com", "Creating Api Key.m");
 		JSONObject jsonObj = new JSONObject(returnKey(apiKeyBean, url, props));
 		String apiKey = (String) jsonObj.get("key");
 		try {
@@ -165,7 +165,7 @@ public class DME2ApiKeyTest extends TestCase {
 	// ............. test case update key is not applicable in
 	// DME2.................//
 	public void testUpdateKey() {
-		ApiKeyBean apiKeyBean = new ApiKeyBean("rs873m@att.com", "Creating Api Key.m");
+		ApiKeyBean apiKeyBean = new ApiKeyBean("user1@att.com", "Creating Api Key.m");
 
 		JSONObject jsonObj = new JSONObject(returnKey(apiKeyBean, url, props));
 		String apiKey = (String) jsonObj.get("key");
@@ -178,7 +178,7 @@ public class DME2ApiKeyTest extends TestCase {
 			sender.setSubContext(s);
 
 			String jsonStringApiBean = new ObjectMapper()
-					.writeValueAsString(new ApiKeyBean("rs873m@att.com", "updating key"));
+					.writeValueAsString(new ApiKeyBean("user1@att.com", "updating key"));
 			sender.setPayload(jsonStringApiBean);
 			System.out.println(jsonStringApiBean);
 			String c = props.getProperty("contenttype");
@@ -203,7 +203,7 @@ public class DME2ApiKeyTest extends TestCase {
 	// DME2.................//
 
 	public void testDeleteKey() {
-		ApiKeyBean apiKeyBean = new ApiKeyBean("rs873m@att.com", "Creating Api Key.m");
+		ApiKeyBean apiKeyBean = new ApiKeyBean("user1@att.com", "Creating Api Key.m");
 
 		JSONObject jsonObj = new JSONObject(returnKey(apiKeyBean, url, props));
 		String apiKey = (String) jsonObj.get("key");

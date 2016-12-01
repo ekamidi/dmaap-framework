@@ -47,7 +47,6 @@ public class SamplePublisher {
 	{
 		final Logger LOG = LoggerFactory.getLogger(SampleConsumer.class);
 		// read the hosts(s) from the command line
-		//final String hosts = ( args.length > 0 ? args[0] : "ueb01hydc.it.att.com,ueb02hydc.it.att.com,ueb03hydc.it.att.com" );
 		final String hosts = ( args.length > 0 ? args[0] : "localhost:8181" );
 
 		// read the topic name from the command line
