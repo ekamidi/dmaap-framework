@@ -16,7 +16,7 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
       
   dmaap:
-    image: zlp11313.vci.att.com:5100/dmaapv1
+    image: attos/dmaap
     ports:
       - "3904:3904"
       - "3905:3905"
