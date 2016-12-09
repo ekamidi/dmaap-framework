@@ -29,7 +29,7 @@
 #*******************************************************************************
 root_directory="/appl/${project.artifactId}"
 config_directory="/appl/${project.artifactId}/bundleconfig"
-runner_file="appl/${project.artifactId}/lib/ajsc-runner-1.0.0.jar"
+runner_file="appl/${project.artifactId}/lib/ajsc-runner-${ajscRuntimeVersion}.jar"
 echo "AJSC HOME directory is " $root_directory
 echo "AJSC Conf Directory is" $config_directory
 echo "Starting using" $runner_file
