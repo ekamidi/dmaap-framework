@@ -20,8 +20,8 @@ node {
     sh "${mvnHome}/bin/mvn -f dmaap/pom.xml clean deploy"
     sh "${mvnHome}/bin/mvn -f dmaapClient/pom.xml clean deploy"
 	
-    sh "${mvnHome}/bin/mvn -f CambriaClient/satoolkit/pom.xml clean install"
-    sh "${mvnHome}/bin/mvn -f CambriaClient/saclientlibrary/pom.xml clean install"
-    sh "${mvnHome}/bin/mvn -f CambriaClient/cambriaclients/pom.xml clean install"  
+    sh "${mvnHome}/bin/mvn -f CambriaClient/satoolkit/pom.xml clean deploy"
+    sh "${mvnHome}/bin/mvn -f CambriaClient/saclientlibrary/pom.xml clean deploy"
+    sh "${mvnHome}/bin/mvn -f CambriaClient/cambriaclients/pom.xml clean deploy"  
    
 }
