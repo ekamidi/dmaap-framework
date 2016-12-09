@@ -12,7 +12,7 @@ node {
     checkout scm    
    
     // Mark the code build 'stage'....
-    stage 'Build DME'
+    stage 'Build dmaap-framework'
     // Run the maven build
     //sh for unix bat for windows
 	
