@@ -13,7 +13,7 @@
 
 	<name>Network Service Assurance Toolkit</name>
 	<description>Library of code used in various service assurance systems</description>
-	<url>https://github.com/att/cambriaclient</url>
+	<url>https://github.com/att/dmaap-framework/tree/master/CambriaClient</url>
 
    <properties>
        <!-- for the client library, we want to allow 1.6 or later -->
@@ -254,8 +254,8 @@
 	</profiles>
 	
 	<scm>
-		<connection>https://github.com/att/CambriaClient.git</connection>
+		<connection>https://github.com/att/dmaap-framework.git</connection>
 		<developerConnection>${project.scm.connection}</developerConnection>
-		<url>http://github.com/att/CambriaClient/tree/master</url>
+		<url>https://github.com/att/dmaap-framework/tree/master/CambriaClient</url>
 	</scm>
 </project>
