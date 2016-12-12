@@ -12,7 +12,7 @@
 
 	<name>Network Service Assurance Client Library</name>
 	<description>Library of code used in various API clients</description>
-	<url>https://github.com/att/cambriaclient</url>
+	<url>https://github.com/att/dmaap-framework/tree/master/CambriaClient</url>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -25,7 +25,7 @@
 	 <licenses>
 	  <license>
 	    <name>BSD License</name>
-	    <url>https://github.com/att/CambriaClient/blob/master/License.txt</url>
+	    <url>https://github.com/att/dmaap-framework/blob/master/CambriaClient/License.txt</url>
 	  </license>
 	</licenses>
 
@@ -191,8 +191,8 @@
     </profile>
   </profiles>
   <scm>
-	<connection>https://github.com/att/CambriaClient.git</connection>
+	<connection>https://github.com/att/dmaap-framework.git</connection>
 	<developerConnection>${project.scm.connection}</developerConnection>
-	<url>http://github.com/att/CambriaClient/tree/master</url>
-</scm>
+	<url>https://github.com/att/dmaap-framework/tree/master/CambriaClient</url>
+  </scm>
 </project>
