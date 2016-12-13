@@ -8,7 +8,7 @@
 	<version>0.0.1</version>
 	<name>cambriaClient</name>
 	<description>Client library for Cambria event routing API</description>
-	<url>https://github.com/att/cambriaclient</url>
+	<url>https://github.com/att/dmaap-framework/tree/master/CambriaClient</url>
 
 	<properties>
 		<!-- for the client library, we want to allow 1.6 or later -->
@@ -19,7 +19,7 @@
 	<licenses>
 	  <license>
 	    <name>BSD License</name>
-	    <url>https://github.com/att/CambriaClient/blob/master/License.txt</url>
+	    <url>https://github.com/att/dmaap-framework/blob/master/CambriaClient/License.txt</url>
 	  </license>
 	</licenses>
 
@@ -191,8 +191,8 @@
 	    </profile>
 	</profiles>
 	<scm>
-		<connection>https://github.com/att/CambriaClient.git</connection>
+		<connection>https://github.com/att/dmaap-framework.git</connection>
 		<developerConnection>${project.scm.connection}</developerConnection>
-		<url>http://github.com/att/CambriaClient/tree/master</url>
+		<url>https://github.com/att/dmaap-framework/tree/master/CambriaClient</url>
 	</scm>
 </project>
