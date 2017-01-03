@@ -58,7 +58,7 @@
         <!--  <param-value>conf/cadi.properties</param-value>  -->
        <!-- <param-value>etc/cadi.properties</param-value> -->
  <!--  <param-value>etc/cadi.properties </param-value>-->
-	<param-value>target/swm/package/nix/dist_files/appl/dmaapMR1/etc/cadi.properties </param-value>
+	<param-value>/appl/dmaapMR1/etc/cadi.properties </param-value>
     </init-param>		
 	</filter>  
 	
