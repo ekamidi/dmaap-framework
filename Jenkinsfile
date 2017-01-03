@@ -18,7 +18,8 @@ node {
 	
     sh "${mvnHome}/bin/mvn -f Msgrtr/pom.xml clean deploy"
     sh "${mvnHome}/bin/mvn -f dmaap/pom.xml clean deploy"
-    sh "${mvnHome}/bin/mvn -X -f dmaapClient/pom.xml clean deploy"
+    sh "${mvnHome}/bin/mvn -f dmaap/pom.xml docker:build docker:push"
+    sh "${mvnHome}/bin/mvn -f dmaapClient/pom.xml clean deploy"
 	
     sh "${mvnHome}/bin/mvn -f CambriaClient/satoolkit/pom.xml clean deploy"
     sh "${mvnHome}/bin/mvn -f CambriaClient/saclientlibrary/pom.xml clean deploy"
