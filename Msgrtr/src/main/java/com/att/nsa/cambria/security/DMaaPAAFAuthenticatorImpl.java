@@ -70,7 +70,7 @@ public class DMaaPAAFAuthenticatorImpl implements DMaaPAAFAuthenticator {
 		
 		String permission = "";
 		String nameSpace ="";
-		if(topicName.contains(".") && topicName.contains("com.att")) {
+		if(topicName.contains(".") && (topicName.contains("com.att")||topicName.contains("org"))) {
 			//String topic = topicName.substring(topicName.lastIndexOf(".")+1);
 			nameSpace = topicName.substring(0,topicName.lastIndexOf("."));
 		}
