@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Copyright (c) 2016 AT&T Intellectual Property. All rights reserved.
+ -->
+
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/" debug="false">
+
+	<appender name="CAMBRIA" class="com.att.nsa.cambria.logging.CambriaAppender">
+		<param name="threshold" value="INFO" />
+		<param name="hosts" value="localhost" />
+		<param name="topic" value="TEST-TOPIC" />
+		<param name="partition" value="LOGTEST" />
+		<param name="compress" value="true" />
+		<param name="maxBatchSize" value="32" />
+		<param name="maxAgeMs" value="1000" />
+		<layout class="org.apache.log4j.EnhancedPatternLayout">
+			<param name="ConversionPattern" value="[%d{ABSOLUTE}][%-5p][%-10t] %m%n" />
+		</layout>
+	</appender>
+ 
+	<root>
+		<level value="INFO" />
+		<appender-ref ref="CAMBRIA" />
+	</root>
+
+</log4j:configuration>

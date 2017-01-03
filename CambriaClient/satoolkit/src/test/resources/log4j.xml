@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Copyright (c) 2016 AT&T Intellectual Property. All rights reserved.
+ -->
+
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/" debug="false">
+
+	<appender name="CONSOLE-ECOMP" class="org.apache.log4j.ConsoleAppender">
+		<param name="threshold" value="DEBUG" />
+		<layout class="com.att.nsa.logging.log4j.EcompLayout">
+			<param name="ConversionPattern" value="ECOMP_AUDIT_1610" />
+		</layout>
+	</appender>
+
+	<appender name="CONSOLE" class="org.apache.log4j.ConsoleAppender">
+		<param name="threshold" value="DEBUG" />
+		<layout class="com.att.nsa.logging.log4j.EcompLayout">
+			<param name="ConversionPattern" value="%X{common}|%X{shared}|%X{middle}|%X{t1Only}|%X{t2Only}|%m%n" />
+		</layout>
+	</appender>
+
+	<root>
+		<level value="INFO" />
+		<appender-ref ref="CONSOLE" />
+		<appender-ref ref="CONSOLE-ECOMP" />
+	</root>
+
+</log4j:configuration>
