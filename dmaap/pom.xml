@@ -134,10 +134,10 @@
 				<artifactId>docker-maven-plugin</artifactId>
 				<version>0.4.11</version>
 				<configuration>
-					<imageName>${docker.registry}/dmaapv1</imageName>
+					<imageName>attos/dmaap</imageName>
 					<dockerDirectory>${dockerLocation}</dockerDirectory>
 					<serverId>docker-hub</serverId>
-					<registryUrl>https://${docker.registry}</registryUrl>
+					<registryUrl>https://index.docker.io/v1</registryUrl>
 					<imageTags>
 						<imageTag>${project.version}</imageTag>
 						<imageTag>latest</imageTag>
@@ -194,11 +194,11 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<dockerLocation>${basedir}/target/swm/package/nix/dist_files/</dockerLocation>
-		<docker.registry>zlp11313.vci.att.com:5100</docker.registry>
+		<docker.registry>hub.docker.com</docker.registry>
 
 		<module.ajsc.namespace.name>dmaap</module.ajsc.namespace.name>
 		<module.ajsc.namespace.version>v1</module.ajsc.namespace.version>
-		<ajscRuntimeVersion>0.0.1-SNAPSHOT</ajscRuntimeVersion>
+		<ajscRuntimeVersion>1.0.0</ajscRuntimeVersion>
 
 		<!-- This will be the Absolute Root of the Project and should contain NO 
 			Versioning -->
@@ -373,7 +373,7 @@
 		<dependency>
 		  <groupId>com.att.ajsc</groupId>
 		  <artifactId>ajsc-archetype-parent</artifactId>
-		  <version>0.0.1-SNAPSHOT</version>
+		  <version>1.0.0</version>
 		  <type>pom</type>
 		</dependency>		
 	</dependencies>
