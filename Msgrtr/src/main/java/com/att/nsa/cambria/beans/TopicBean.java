@@ -47,8 +47,8 @@ public class TopicBean implements Serializable {
 	private String topicName;
 	private String topicDescription;
 
-	private int partitionCount;
-	private int replicationCount;
+	private int partitionCount = 1; //default values
+	private int replicationCount = 1; //default value
 
 	private boolean transactionEnabled;
 

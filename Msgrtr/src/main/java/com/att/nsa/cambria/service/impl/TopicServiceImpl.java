@@ -272,18 +272,10 @@ public class TopicServiceImpl implements TopicService {
 		try {
 			final String topicName = topicBean.getTopicName();
 			final String desc = topicBean.getTopicDescription();
-			 int partition = topicBean.getPartitionCount();
-			 	// int replica = topicBean.getReplicationCount();
-			 if (partition==0) {
-				 partition=8;
-			 }
-			 final  int partitions = partition;
-			
-			 int replica = topicBean.getReplicationCount();
-			 if (replica==0) {
-				 replica=3;
-			 }
-			 final int replicas=replica;
+
+			final  int partitions = topicBean.getPartitionCount();
+		
+			final int replicas = topicBean.getReplicationCount();
 			boolean transactionEnabled = topicBean.isTransactionEnabled();
 			
 
