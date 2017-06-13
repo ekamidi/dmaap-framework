@@ -38,9 +38,9 @@ INSTALLATION
 
 The quick way of running Message Router locally is downloading the docker image and running it. The Docker image contains Message router configured with Apache Kafka.
 
-$docker pull <docker registry>/dmaap
+$docker pull attos/dmaap
 
-$docker run <docker registry>/dmaap
+$docker run attos/dmaap
 
 If you want to build from source 
   1. Install and Configure Java 1.8
