@@ -63,8 +63,8 @@
 	
 	<!-- SSL Keystore configuration -->
 	
-	 <!-- <New id="sslContextFactory" class="org.eclipse.jetty.util.ssl.SslContextFactory">
-             <Set name="KeyStorePath">/opt/app/dmaap/msgrtr/etc/keystore</Set>
+	 <New id="sslContextFactory" class="org.eclipse.jetty.util.ssl.SslContextFactory">
+             <Set name="KeyStorePath">/appl/dmaapMR1/bundleconfig/etc/keystore.jks</Set>
                   <Set name="KeyStorePassword">changeit</Set>
                        <Set name="KeyManagerPassword">changeit</Set>
          </New>
@@ -102,7 +102,7 @@
                                <Set name="idleTimeout">30000</Set>
                          </New>
                   </Arg>
-        </Call> -->
+        </Call>
         
 	
 

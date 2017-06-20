@@ -188,6 +188,10 @@
 	<logger name="com.att" level="WARN" />
 	<logger name="com.att.ajsc.csi.logging" level="WARN" />
 	<logger name="com.att.ajsc.filemonitor" level="WARN" />
+	
+	<logger name="com.att.nsa.dmaap.util" level="INFO" /> 
+	<logger name="com.att.cadi.filter" level="INFO" /> 
+	
 
 	<!-- Other Loggers that may help troubleshoot -->
 	<logger name="net.sf" level="WARN" />
@@ -250,7 +254,7 @@
 			<pattern>"%d [%thread] %-5level %logger{1024} - %msg%n"</pattern>
 		</encoder>
 	</appender>
-	<if condition='property("JMS_BROKER").contains("WMQ")'>
+<!-- 	<if condition='property("JMS_BROKER").contains("WMQ")'>
 		<then>
 			<appender name="Audit-Record-Queue" class="ajsc.JMSQueueAppender">
 				<param name="InitialContextFactoryName" value="${JMS_WMQ_INITIAL_CONNECTION_FACTORY_NAME}" />
@@ -265,7 +269,7 @@
 				<param name="ConnectionFactoryName" value="${JMS_WMQ_CONNECTION_FACTORY_NAME}" />
 			</appender>
 		</then>
-		<else> <!-- logback jms appenders definition starts here -->
+		<else> logback jms appenders definition starts here
 			<appender name="Audit-Record-Queue" class="ajsc.JMSQueueAppender">
 				<param name="InitialContextFactoryName"
 					value="com.tibco.tibjms.naming.TibjmsInitialContextFactory" />
@@ -285,7 +289,7 @@
 				</QueueBindingName>
 			</appender>
 		</else>
-	</if>
+	</if> -->
 	<appender name="ASYNC-audit" class="ch.qos.logback.classic.AsyncAppender">
 		<queueSize>1000</queueSize>
 		<discardingThreshold>0</discardingThreshold>
