@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.UnknownHostException;
+import java.security.GeneralSecurityException;
 import java.security.KeyManagementException;
 import java.security.KeyStoreException;
 import java.security.NoSuchAlgorithmException;
@@ -56,6 +57,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.att.nsa.apiClient.credentials.ApiCredential;
+
+import com.att.nsa.metrics.CdmMetricsRegistry;
+import com.att.nsa.metrics.impl.CdmRateTicker;
 
 /**
  * A client for typical server interaction.
@@ -477,9 +481,62 @@ public class HttpClient
 			fObjectCache.remove ( path );
 		}
 	}
-	
+	/**
+	 * Get the internal object cache
+	 * @return the internal cache
+	 * @deprecated The internal cache shouldn't be needed outside of this implementation
+	 */
+	@Deprecated
 	public EntityLruCache<JSONObject> getCache() {
 		return fObjectCache;
+	}
+	
+	/**
+	 * Register a metrics registry and name prefix
+	 * @param metrics
+	 * @param metricsNamePrefix
+	 */
+	public synchronized HttpClient sendMetricsTo ( CdmMetricsRegistry metrics, String metricsNamePrefix )
+	{
+		if ( fMetrics != null )
+		{
+			fMetrics.removeItem ( makeName ( kReqRate ) );
+			fMetrics.removeItem ( makeName ( kCacheHitRate ) );
+			fMetrics.removeItem ( makeName ( kCacheMissRate ) );
+			fMetrics.removeItem ( makeName ( kHttpReqRate ) );
+			fMetrics.removeItem ( makeName ( kHttpServerErrRate ) );
+			fMetrics.removeItem ( makeName ( kHttpClientErrRate ) );
+		}
+
+		fMetrics = metrics;
+		fMetricsNamePrefix = metricsNamePrefix;
+
+		if ( fMetrics != null )
+		{
+			fMetrics.putItem ( makeName ( kReqRate ), fReqRate );
+			fMetrics.putItem ( makeName ( kCacheHitRate ), fCacheHitRate );
+			fMetrics.putItem ( makeName ( kCacheMissRate ), fCacheMissRate );
+			fMetrics.putItem ( makeName ( kHttpReqRate ), fHttpReqRate );
+			fMetrics.putItem ( makeName ( kHttpServerErrRate ), fHttpSrvErrRate );
+			fMetrics.putItem ( makeName ( kHttpClientErrRate ), fHttpCliErrRate );
+		}
+		
+		return this;
+	}
+
+	private String makeName ( String name )
+	{
+		if ( fMetricsNamePrefix != null )
+		{
+			final StringBuilder sb = new StringBuilder ().append ( fMetricsNamePrefix );
+			if ( !fMetricsNamePrefix.endsWith ( "." ) )
+			{
+				sb.append ( "." );
+			}
+			sb.append ( name );
+			return sb.toString ();
+		}
+		return name;
 	}
 
 	private final CloseableHttpClient fClient;
@@ -491,6 +548,22 @@ public class HttpClient
 	private final CacheUse fDefCacheUse;
 	private EntityLruCache<JSONObject> fObjectCache;
 	private Logger fLog;
+	private CdmMetricsRegistry fMetrics = null;
+	private String fMetricsNamePrefix = null;
+
+	private static final String kReqRate = "requestRate";
+	private static final String kCacheHitRate = "cacheHitRate";
+	private static final String kCacheMissRate = "cacheMissRate";
+	private static final String kHttpReqRate = "httpRequestRate";
+	private static final String kHttpServerErrRate = "httpServerErrRate";
+	private static final String kHttpClientErrRate = "httpClientErrRate";
+
+	private CdmRateTicker fReqRate = new CdmRateTicker ( "Requests", 1, TimeUnit.MINUTES, 60, TimeUnit.MINUTES );
+	private CdmRateTicker fCacheHitRate = new CdmRateTicker ( "Cache Hits", 1, TimeUnit.MINUTES, 60, TimeUnit.MINUTES );
+	private CdmRateTicker fCacheMissRate = new CdmRateTicker ( "Cache Misses", 1, TimeUnit.MINUTES, 60, TimeUnit.MINUTES );
+	private CdmRateTicker fHttpReqRate = new CdmRateTicker ( "HTTP Requests", 1, TimeUnit.HOURS, 4, TimeUnit.HOURS );
+	private CdmRateTicker fHttpSrvErrRate = new CdmRateTicker ( "HTTP Server Errors", 1, TimeUnit.HOURS, 4, TimeUnit.HOURS );
+	private CdmRateTicker fHttpCliErrRate = new CdmRateTicker ( "HTTP Client Errors", 1, TimeUnit.HOURS, 4, TimeUnit.HOURS );
 
 	private static boolean fTracing = Boolean.parseBoolean ( System.getProperty ( "saclient.trace", "false" ) );
 	private void trace ( String msg )
@@ -526,22 +599,34 @@ public class HttpClient
 	}
 
 	// note entity is just sent in for use by the tracer
-	private JSONObject runCall ( HttpRequestBase req, String entityId, boolean expectEntity, CacheUse cu, byte[] entity ) throws HttpObjectNotFoundException, HttpException, IOException
+	private synchronized JSONObject runCall ( HttpRequestBase req, String entityId, boolean expectEntity, CacheUse cu, byte[] entity ) throws HttpObjectNotFoundException, HttpException, IOException
 	{
 		try
 		{
+			// tick the request rate counter
+			fReqRate.tick ();
 			// Set to default Cacheuse if none is specified
 			if ( cu == CacheUse.DEFAULT)
+			{
 				cu = fDefCacheUse;
+			}
 	
 			// if we can read this entity from the cache, and it's in there,
 			// then off we go with it.
 			if ( req.getMethod().equalsIgnoreCase ( HttpGet.METHOD_NAME ) )
 			{
-				if ( canReadCache ( cu ) && fObjectCache.containsKey ( entityId ) )
+				if ( canReadCache ( cu ) )
 				{
-					fLog.info ( req.getMethod() + " " + entityId + ": found in cache" );
-					return fObjectCache.get ( entityId );
+					if ( fObjectCache.containsKey ( entityId ) )
+					{
+						fCacheHitRate.tick ();
+						fLog.info ( req.getMethod() + " " + entityId + ": found in cache" );
+						return fObjectCache.get ( entityId );
+					}
+					else
+					{
+						fCacheMissRate.tick ();
+					}
 				}
 			}
 			else
@@ -618,7 +703,8 @@ public class HttpClient
 				}
 				fTracer.outbound ( uri, headers, method, entity );
 			}
-
+			
+			fHttpReqRate.tick ();
 			final CloseableHttpResponse reply = fClient.execute ( req, HttpClientContext.create() );
 			try
 			{
@@ -706,6 +792,7 @@ public class HttpClient
 				}
 				else if ( sc == 404 )
 				{
+					fHttpCliErrRate.tick ();
 					// 404 is a special case; we want to report that the object wasn't 
 					// found rather than a general client or server error
 					trace ( "object not found" );
@@ -713,6 +800,7 @@ public class HttpClient
 				}
 				else
 				{
+					fHttpCliErrRate.tick ();
 					// this can be any number of things from a bad request to a
 					// server malfunction.
 					if ( sc >= 400 && sc <= 499 )
@@ -722,12 +810,14 @@ public class HttpClient
 					}
 					else if ( sc >= 500 )
 					{
+						fHttpCliErrRate.tick ();
 						// server says its having trouble
 						fHostSelector.reportReachabilityProblem ( 5, TimeUnit.SECONDS );
 						throw new HttpException ( sl, reply.getEntity () );
 					}
 					else
 					{
+						fHttpCliErrRate.tick ();
 						// no idea...
 						throw new HttpException ( sl, reply.getEntity () );
 					}
@@ -741,12 +831,14 @@ public class HttpClient
 		}
 		catch ( UnknownHostException x )
 		{
+			fHttpCliErrRate.tick ();
 			fLog.warn ( "Unknown host " + req.getURI().getHost() + "; blacklisting for 10 minutes" );
 			fHostSelector.reportReachabilityProblem ( 10, TimeUnit.MINUTES );
 			throw x;
 		}
 		catch ( IOException x )
 		{
+			fHttpCliErrRate.tick ();			
 			fLog.warn ( "Error executing HTTP request. " + x.getMessage() + "; blacklisting for 2 minutes"  );
 			fHostSelector.reportReachabilityProblem ( 2, TimeUnit.MINUTES );
 			throw x;

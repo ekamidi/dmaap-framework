@@ -156,14 +156,14 @@ public class SaJsonUtil
 		return jsonObjectToMap ( obj, new mapEntryFilter<String>()
 			{
 			@Override public String checkKey ( String key ) { return key; }
-			@Override public String checkValue ( String value ) { return value; }
+			@Override public String checkValue ( Object value ) { return value.toString(); }
 			});
 	}
 
 	public interface mapEntryFilter<T>
 	{
 		String checkKey ( String key );
-		T checkValue ( String value );
+		T checkValue ( Object value );
 	}
 	public static <T> Map<String,T> jsonObjectToMap ( JSONObject obj, mapEntryFilter<T> mef ) throws JSONException
 	{
@@ -175,7 +175,7 @@ public class SaJsonUtil
 			{
 				final Object nameObj = it.next ();
 				final String name = mef.checkKey ( nameObj.toString () );
-				final T val = mef.checkValue ( obj.get ( name ).toString () );
+				final T val = mef.checkValue ( obj.get ( name ) );
 				map.put ( name, val );
 			}
 		}
@@ -303,6 +303,70 @@ public class SaJsonUtil
 		final int dot = field.indexOf ( '.' );
 		return ( !container.has ( field ) && dot >= 0 );
 	}
+	
+	/**
+	 * Given a dot-separate name, get the set of segments that resolve to a value, if any.
+	 * @param container
+	 * @param field
+	 * @return a list of name segments
+	 */
+	public static List<String> getNameSegments ( JSONObject container, String field )
+	{
+		final int dot = field.indexOf ( '.' );
+
+		// if we have a leading dot, that's a bad format
+		if ( dot == 0 ) return null;
+
+		// if we don't have a dot at all, or the container contains the full field name, we're done segmenting.
+		if ( dot < 0 )
+		{
+			if ( container.has ( field ) )
+			{
+				final LinkedList<String> result = new LinkedList<String> ();
+				result.add ( field );
+				return result;
+			}
+			else
+			{
+				// the container doesn't have this field and there aren't any segments
+				return null;
+			}
+		}
+		
+
+		// otherwise, we have segmenting potential. we start with the first segment and drill down. if that
+		// produces a value, good. If not, try the first two segments as a field name, and so on.
+		final String[] segments = SaStringHelper.splitStringOnDot ( field );
+
+		int index = 0;
+		final StringBuilder local = new StringBuilder ();
+		for ( String segment : segments )
+		{
+			// add this segment to the local field name
+			if ( local.length () > 0 ) local.append ( '.' );
+			local.append ( segment );
+			index++;
+
+			// see if the named container exists and contains the remaining string as a field
+			final JSONObject lowerContainer = container.optJSONObject ( local.toString () );
+			if ( lowerContainer != null )
+			{
+				final String remainingName = SaStringHelper.joinStringWithDot ( segments, index );
+				final List<String> lowerResult = getNameSegments ( lowerContainer, remainingName );
+				if ( lowerResult != null )
+				{
+					// found it
+					final LinkedList<String> result = new LinkedList<String> ();
+					result.add ( local.toString () );
+					result.addAll ( lowerResult );
+					return result;
+				}
+			}
+		}
+
+		// no match
+		return null;
+	}
 
 	public interface ValueReference
 	{
@@ -313,6 +377,7 @@ public class SaJsonUtil
 		boolean getValue ( boolean defval );
 		JSONObject getObject ();
 		JSONArray getArray ();
+		Object getRawValue ();
 		void remove ();
 	}
 
@@ -329,7 +394,7 @@ public class SaJsonUtil
 
 		@Override public void writeValue ( Object o ) { fArray.put ( fIndex, o ); }
 		@Override public void remove () { fArray.remove ( fIndex ); }
-
+		@Override public Object getRawValue () { return fArray.opt ( fIndex ); }
 		@Override public String getValue ( String defval ) { return fArray.optString ( fIndex, defval ); }
 		@Override public int getValue ( int defval ) { return fArray.optInt ( fIndex, defval ); }
 		@Override public long getValue ( long defval ) { return fArray.optLong ( fIndex, defval ); }
@@ -352,6 +417,7 @@ public class SaJsonUtil
 		@Override public void writeValue ( Object o ) { fObj.put ( fField, o ); }
 		@Override public void remove () { fObj.remove ( fField ); }
 
+		@Override public Object getRawValue () { return fObj.opt ( fField ); }
 		@Override public String getValue ( String defval ) { return fObj.optString ( fField, defval ); }
 		@Override public int getValue ( int defval ) { return fObj.optInt ( fField, defval ); }
 		@Override public long getValue ( long defval ) { return fObj.optLong ( fField, defval ); }
@@ -359,7 +425,15 @@ public class SaJsonUtil
 		@Override public JSONObject getObject () { return fObj.optJSONObject ( fField ); }
 		@Override public JSONArray getArray () { return fObj.optJSONArray ( fField ); }
 	}
-
+	
+	
+	/**
+	 * Get a value reference (container) with the given name. 
+	 * @param top
+	 * @param name
+	 * @param createIntermediates
+	 * @return a value reference
+	 */
 	public static ValueReference getContainerNamed ( final JSONObject top, final String name, boolean createIntermediates )
 	{
 		if ( isDotFieldName ( top, name ) )
@@ -394,7 +468,7 @@ public class SaJsonUtil
 
 				// now find the object at the index
 				Object oo = a.opt ( t.index );
-				if ( oo == null && createIntermediates )
+				if ( ( oo == null || oo == JSONObject.NULL ) && createIntermediates )
 				{
 					oo = new JSONObject ();
 					a.put ( t.index, oo );

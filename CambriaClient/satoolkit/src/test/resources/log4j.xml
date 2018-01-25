@@ -20,6 +20,45 @@
 			<param name="ConversionPattern" value="%X{common}|%X{shared}|%X{middle}|%X{t1Only}|%X{t2Only}|%m%n" />
 		</layout>
 	</appender>
+	
+			<param name="threshold" value="INFO" />
+		<layout class="com.att.nsa.logging.log4j.EcompLayout"><param name="ConversionPattern" value="ECOMP_METRIC" /></layout>
+	</appender>
+
+	<appender name="ECOMP_ERROR" class="org.apache.log4j.ConsoleAppender">
+		<param name="threshold" value="WARN" />	<!-- only WARN and ERROR are allowed in this log -->
+		<layout class="com.att.nsa.logging.log4j.EcompLayout"><param name="ConversionPattern" value="ECOMP_ERROR" /></layout>
+	</appender>
+
+	<appender name="ECOMP_DEBUG" class="org.apache.log4j.ConsoleAppender">
+		<param name="threshold" value="INFO" />
+		<layout class="com.att.nsa.logging.log4j.EcompLayout"><param name="ConversionPattern" value="ECOMP_DEBUG" /></layout>
+	</appender>
+
+	<!--
+		The ECOMP logging standard has four specific classes of logging that are 
+		unrelated to subsystem name. 
+	-->
+	<logger name="com.att.ecomp.audit" additivity="false">
+		<level value="info"/>
+		<appender-ref ref="ECOMP_AUDIT" />
+	</logger>
+
+	<logger name="com.att.ecomp.metrics" additivity="false">
+		<level value="info"/>
+		<appender-ref ref="ECOMP_METRIC" />
+	</logger>
+
+	<logger name="com.att.ecomp.error" additivity="false">
+		<level value="info"/>
+		<appender-ref ref="ECOMP_ERROR" />
+	</logger>
+
+	<logger name="com.att.ecomp.debug" additivity="false">
+		<level value="info"/>
+		<appender-ref ref="ECOMP_DEBUG" />
+	</logger>
+	
 
 	<root>
 		<level value="INFO" />

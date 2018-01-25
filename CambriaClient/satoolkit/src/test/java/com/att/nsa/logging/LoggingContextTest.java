@@ -11,6 +11,18 @@ import org.slf4j.LoggerFactory;
 
 public class LoggingContextTest extends TestCase
 {
+	
+	@Test
+	public void testToExamineFormats () throws InterruptedException
+	{
+		new LoggingContextFactory.Builder()
+			.build ()
+			.put ( "requestId", "12345" )
+		;
+		ecompDebugLog.info ( "debug log output" );
+		ecompDebugLog.info ( "next line" );
+	}
+	
 	@Test
 	public void testThreadLocalContexts () throws InterruptedException
 	{
@@ -80,5 +92,6 @@ public class LoggingContextTest extends TestCase
 	}
 
 	private static final Logger log = LoggerFactory.getLogger ( LoggingContextTest.class );
+	private static final Logger ecompDebugLog = LoggerFactory.getLogger ( "com.att.ecomp.debug" );
 }
 

@@ -139,8 +139,6 @@ public class CambriaBatchPublisher implements CambriaBatchingPublisher
 
 	/**
 	 * Send any pending messages and close this publisher.
-	 * @throws IOException
-	 * @throws InterruptedException 
 	 */
 	@Override
 	public void close ()

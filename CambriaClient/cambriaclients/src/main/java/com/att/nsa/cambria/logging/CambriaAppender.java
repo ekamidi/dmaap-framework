@@ -105,6 +105,9 @@ public class CambriaAppender extends AppenderSkeleton {
 		try {
             synchronized (fPublisher) // because the publisher service thread locks it too
             {
+            	// FIXME: some processes write really quickly. can this grow above the emergency flush size
+            	// before an attempt to publish is made?
+
                 if (fPublisher.getPendingMessageCount() > emergencyFlushSize) {
                     try {
                         LogLog.error(

@@ -17,6 +17,7 @@ import com.att.nsa.apiClient.http.HttpClient.ConnectionType;
 import com.att.nsa.cambria.client.impl.CambriaConsumerImpl;
 import com.att.nsa.cambria.client.impl.CambriaMetaClient;
 import com.att.nsa.cambria.client.impl.CambriaSimplerBatchPublisher;
+import com.att.nsa.metrics.CdmMetricsRegistry;
 
 //Deprecated - API KEY Security model is deprecated and will be migrated to AAF security model
 
@@ -146,6 +147,19 @@ public class CambriaClientBuilders
 		 * @return this builder
 		 */
 		public ConsumerBuilder withSocketTimeout ( int soTimeoutMs ) { fSoTimeoutMs = soTimeoutMs; return this; };
+		
+		/**
+		 * Report metrics to the given registry with the given name prefix.
+		 * @param registry
+		 * @param registryEntryPrefix Use null for no prefix.
+		 * @return this builder
+		 */
+		public ConsumerBuilder reportingMetricsTo ( CdmMetricsRegistry registry, String registryEntryPrefix )
+		{
+			fMetrics = registry;
+			fMetricsNamePrefix = registryEntryPrefix;
+			return this;
+		};
 
 		/**
 		 * Build the consumer
@@ -177,6 +191,11 @@ public class CambriaClientBuilders
 			{
 				throw new IllegalArgumentException ( "One of Basic Auth username or password is null." );
 			}
+
+			if ( fMetrics != null )
+			{
+				client.sendMetricsTo ( fMetrics, fMetricsNamePrefix );
+			}
 			return client;
 		}
 
@@ -193,6 +212,8 @@ public class CambriaClientBuilders
 		private int fLimit = -1;
 		private int fSoTimeoutMs = HttpClient.kDefault_SocketTimeoutMs; 
 		private String fFilter = null;
+		private CdmMetricsRegistry fMetrics = null;
+		private String fMetricsNamePrefix = null;
 	}
 
 	/*************************************************************************/
@@ -331,6 +352,27 @@ public class CambriaClientBuilders
 			fLog = log;
 			return this;
 		}
+		/**
+		 * Set the socket read timeout for this client
+		 * @param soTimeoutMs the read timeout for this client
+		 * @return this builder
+		 */
+		public PublisherBuilder withSocketTimeout ( int soTimeoutMs ) { fSoTimeoutMs = soTimeoutMs; return this; };
+
+		/**
+		
+		/**
+		 * Report metrics to the given registry with the given name prefix.
+		 * @param registry
+		 * @param registryEntryPrefix Use null for no prefix.
+		 * @return this builder
+		 */
+		public PublisherBuilder reportingMetricsTo ( CdmMetricsRegistry registry, String registryEntryPrefix )
+		{
+			fMetrics = registry;
+			fMetricsNamePrefix = registryEntryPrefix;
+			return this;
+		};
 
 		/**
 		 * Build the publisher
@@ -355,12 +397,14 @@ public class CambriaClientBuilders
 				.compress ( fCompress )
 				.logSendFailuresAfter ( fFailLogThreshold )
 				.logTo ( fLog )
+				.timeoutSocketAfter ( fSoTimeoutMs )
+				.metricsTo ( fMetrics, fMetricsNamePrefix )
 				.build ();
-			if ( fApiKey != null )
+			if ( fApiKey != null && fApiKey.length () > 0 )
 			{
 				pub.setApiCredentials ( fApiKey, fApiSecret );
 			}
-			if ( fUsername != null || fPassword != null )
+			if ( (fUsername != null && fUsername.length () > 0)|| fPassword != null )
 			{
 				pub.setHttpBasicCredentials ( fUsername, fPassword );
 			}
@@ -379,6 +423,9 @@ public class CambriaClientBuilders
 		private String fPassword = null;
 		private ConnectionType fConnectionType = ConnectionType.HTTP;
 		private Logger fLog = null;
+		private CdmMetricsRegistry fMetrics = null;
+		private String fMetricsNamePrefix = null;
+		private int fSoTimeoutMs = HttpClient.kDefault_SocketTimeoutMs; 
 	}
 
 	/**

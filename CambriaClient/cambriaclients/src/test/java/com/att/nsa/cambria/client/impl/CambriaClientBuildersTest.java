@@ -1,7 +1,7 @@
 /*******************************************************************************
  * Copyright (c) 2016 AT&T Intellectual Property. All rights reserved.
  *******************************************************************************/
-package com.att.nsa.cambria.client;
+package com.att.nsa.cambria.client.impl;
 
 import java.net.MalformedURLException;
 import java.security.GeneralSecurityException;
@@ -10,7 +10,8 @@ import junit.framework.TestCase;
 
 import org.junit.Test;
 
-import com.att.nsa.cambria.client.impl.CambriaConsumerImpl;
+import com.att.nsa.cambria.client.CambriaClientBuilders;
+import com.att.nsa.cambria.client.CambriaConsumer;
 
 //Deprecated - API KEY Security model is deprecated and will be migrated to AAF security model
 

@@ -24,11 +24,7 @@ public class CambriaBaseClient extends HttpClient implements CambriaClient
 {
 	protected CambriaBaseClient ( ConnectionType ct, Collection<String> hosts, int soTimeoutMs ) throws MalformedURLException, GeneralSecurityException
 	{
-		super ( ct, hosts,
-			ct == ConnectionType.HTTP ? CambriaConstants.kStdCambriaServicePort : CambriaConstants.kStdCambriaHttpsServicePort,
-			null, CacheUse.NONE, 1, 1, TimeUnit.MILLISECONDS );
-
-			fLog = LoggerFactory.getLogger ( this.getClass().getName () );
+		this ( ct, hosts, null, soTimeoutMs );
 	}
 	
 	protected CambriaBaseClient ( ConnectionType ct, Collection<String> hosts, String clientSignature, int soTimeoutMs ) throws MalformedURLException, GeneralSecurityException

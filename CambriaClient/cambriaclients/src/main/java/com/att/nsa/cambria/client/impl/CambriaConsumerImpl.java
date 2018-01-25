@@ -133,7 +133,7 @@ public class CambriaConsumerImpl extends CambriaBaseClient implements CambriaCon
 	private final int fLimit;
 	private final String fFilter;
 
-	public String createUrlPath (int timeoutMs , int limit )
+	 String createUrlPath (int timeoutMs , int limit )
 	{
 		final StringBuffer url = new StringBuffer ( CambriaConstants.makeConsumerUrl ( fTopic, fGroup, fId ) );
 		final StringBuffer adds = new StringBuffer ();

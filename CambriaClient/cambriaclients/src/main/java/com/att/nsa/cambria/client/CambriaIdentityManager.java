@@ -54,7 +54,9 @@ public interface CambriaIdentityManager extends CambriaClient
 	 * Get basic info about a known API key
 	 * @param apiKey
 	 * @return the API key's info or null if it doesn't exist
-	 * @throws HttpObjectNotFoundException, HttpException, CambriaApiException 
+	 * @throws HttpObjectNotFoundException
+	 * @throws HttpException
+	 * @throws CambriaApiException
 	 * @throws IOException 
 	 */
 	ApiKey getApiKey ( String apiKey ) throws HttpObjectNotFoundException, HttpException, CambriaApiException, IOException;

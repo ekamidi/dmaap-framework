@@ -13,7 +13,7 @@ public interface CdmMeasuredItem extends Delayed
 {
 	/**
 	 * If the item needs to be evaluated periodically, return true
-	 * and implement Delayed appropriately.
+	 * and implement poll() appropriately.
 	 * @return true/false
 	 */
 	boolean requiresScheduledEvaluation ();

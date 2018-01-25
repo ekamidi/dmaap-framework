@@ -154,10 +154,16 @@ public class CassandraConfigDb implements ConfigDb {
 
 		final TreeSet<ConfigPath> set = new TreeSet<ConfigPath> ();
 		final BoundStatement bStat = new BoundStatement(getStatement(StatementName.GET_CHILDREN));
+		bStat.bind(key.toString());
 		final ResultSet results = session.execute(bStat);
 		
 		for (Row result : results.all()) {
-			set.add(SimplePath.parse(result.getString("child")));
+			// Got some empty child values in Cassandra.  Not sure how (testing?).
+			String child = result.getString( "child" );
+			if ( child.startsWith("/") )
+			{
+				set.add( SimplePath.parse( child ) );
+			}
 		}
 		
 		return set;
@@ -170,10 +176,15 @@ public class CassandraConfigDb implements ConfigDb {
 		// no magic here...
 		final HashMap<ConfigPath,String> map = new HashMap<ConfigPath,String> ();
 		final BoundStatement bStat = new BoundStatement(getStatement(StatementName.GET_CHILDREN));
+		bStat.bind(key.toString());
 		final ResultSet results = session.execute(bStat);
 		
 		for (Row result : results.all()) {
-			map.put(SimplePath.parse(result.getString("child")), result.getString("value"));
+			// Got some empty child values in Cassandra. Not sure how (testing?).
+			String child = result.getString("child");
+			if (child.startsWith("/")) {
+				map.put(SimplePath.parse(child), result.getString("value"));
+			}
 		}
 		
 		return map;

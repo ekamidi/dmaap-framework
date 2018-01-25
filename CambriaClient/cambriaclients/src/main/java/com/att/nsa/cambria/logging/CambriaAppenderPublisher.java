@@ -386,6 +386,9 @@ public class CambriaAppenderPublisher implements CambriaBatchingPublisher
         Scanner responseReader = null;
         try
         {
+        	// FIXME: this code doesn't work if the user has a port specified in the host value, like
+        	// "localhost:3904"
+    
             // Send POST
             if (fConnectionType.equals(ConnectionType.HTTP))
             {

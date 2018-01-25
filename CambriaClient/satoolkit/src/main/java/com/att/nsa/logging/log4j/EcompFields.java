@@ -14,4 +14,7 @@ public class EcompFields
 
 	// request
 	public static final String kRequestId = "requestId";
+	
+	// other items
+	public static final String kEcompDebugLineEnding = "^\\\\n";		// "|^\n"
 }

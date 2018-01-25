@@ -18,14 +18,14 @@ import com.att.nsa.cambria.client.impl.CambriaSimplerBatchPublisher;
 //Deprecated - API KEY Security model is deprecated and will be migrated to AAF security model
 
 /**
- * A factory for Cambria clients.<br/>
- * <br/>
+ * A factory for Cambria clients.<br>
+ * <br>
  * Use caution selecting a consumer creator factory. If the call doesn't accept a consumer group name, then it creates
  * a consumer that is not restartable. That is, if you stop your process and start it again, your client will NOT receive
  * any missed messages on the topic. If you need to ensure receipt of missed messages, then you must use a consumer that's
  * created with a group name and ID. (If you create multiple consumer processes using the same group, load is split across
- * them. Be sure to use a different ID for each instance.)<br/>
- * <br/>
+ * them. Be sure to use a different ID for each instance.)<br>
+ * <br>
  * Publishers  
  * 
  * @deprecated Use CambriaClientBuilders

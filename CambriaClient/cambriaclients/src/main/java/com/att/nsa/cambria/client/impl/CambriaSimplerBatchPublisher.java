@@ -24,6 +24,7 @@ import com.att.nsa.apiClient.http.HttpException;
 import com.att.nsa.apiClient.http.HttpObjectNotFoundException;
 import com.att.nsa.cambria.client.CambriaBatchingPublisher;
 import com.att.nsa.clock.SaClock;
+import com.att.nsa.metrics.CdmMetricsRegistry;
 
 //Deprecated - API KEY Security model is deprecated and will be migrated to AAF security model
 
@@ -102,12 +103,23 @@ public class CambriaSimplerBatchPublisher extends CambriaBaseClient implements C
 			fLogTo = log;
 			return this;
 		}
-
+		public Builder timeoutSocketAfter ( int timeoutMs )
+		{
+			fSocketTimeoutMs = timeoutMs;
+			return this;
+		}
+		public Builder metricsTo ( CdmMetricsRegistry reg, String namePrefix )
+		{
+			fMetrics = reg;
+			fMetricsNamePrefix = namePrefix;
+			return this;
+		}
+		
 		public CambriaSimplerBatchPublisher build () throws MalformedURLException, GeneralSecurityException
 		{
 			final CambriaSimplerBatchPublisher pub =
 				new CambriaSimplerBatchPublisher ( fConnectionType, fUrls, fTopic, fMaxBatchSize, fMaxBatchAgeMs,
-					fCompress, fFailLogThreshold );
+					fCompress, fFailLogThreshold, fSocketTimeoutMs );
 			if ( fApiKey != null )
 			{
 				pub.setApiCredentials ( fApiKey, fApiSecret );
@@ -115,6 +127,10 @@ public class CambriaSimplerBatchPublisher extends CambriaBaseClient implements C
 			if ( fLogTo != null )
 			{
 				pub.logTo ( fLogTo );
+			}
+			if ( fMetrics != null )
+			{
+				pub.sendMetricsTo ( fMetrics, fMetricsNamePrefix );
 			}
 			return pub;
 		}
@@ -129,6 +145,9 @@ public class CambriaSimplerBatchPublisher extends CambriaBaseClient implements C
 		private String fApiSecret = null;
 		private int fFailLogThreshold = 10;
 		private Logger fLogTo = null;
+		private CdmMetricsRegistry fMetrics = null;
+		private String fMetricsNamePrefix = null;
+		private int fSocketTimeoutMs = HttpClient.kDefault_SocketTimeoutMs;
 	};
 
 	@Override
@@ -271,6 +290,20 @@ public class CambriaSimplerBatchPublisher extends CambriaBaseClient implements C
 		}
 		return shouldSend;
 	}
+	
+	static void sendEncodedMessage ( OutputStream os, TimestampedMessage m ) throws IOException
+	{
+		final byte[] partitionBytes = m.fPartition.getBytes ();
+		final byte[] msgBytes = m.fMsg.getBytes ();
+
+		os.write ( ( "" + partitionBytes.length ).getBytes() );
+		os.write ( '.' );
+		os.write ( ( "" + msgBytes.length ).getBytes() );
+		os.write ( '.' );
+		os.write ( partitionBytes );
+		os.write ( msgBytes );
+		os.write ( '\n' );
+	}
 
 	private synchronized boolean sendBatch ()
 	{
@@ -301,13 +334,7 @@ public class CambriaSimplerBatchPublisher extends CambriaBaseClient implements C
 			}
 			for ( TimestampedMessage m : fPending )
 			{
-				os.write ( ( "" + m.fPartition.length () ).getBytes() );
-				os.write ( '.' );
-				os.write ( ( "" + m.fMsg.length () ).getBytes() );
-				os.write ( '.' );
-				os.write ( m.fPartition.getBytes() );
-				os.write ( m.fMsg.getBytes() );
-				os.write ( '\n' );
+				sendEncodedMessage ( os, m );
 			}
 			os.close ();
 
@@ -354,9 +381,9 @@ public class CambriaSimplerBatchPublisher extends CambriaBaseClient implements C
 	private static final long sfWaitAfterError = 1000;
 
 	private CambriaSimplerBatchPublisher ( ConnectionType ct, Collection<String> hosts, String topic, int maxBatchSize,
-		long maxBatchAgeMs, boolean compress, int failureLogThreshold ) throws MalformedURLException, GeneralSecurityException
+		long maxBatchAgeMs, boolean compress, int failureLogThreshold, int socketTimeoutMs ) throws MalformedURLException, GeneralSecurityException
 	{
-		super ( ct, hosts, HttpClient.kDefault_SocketTimeoutMs );
+		super ( ct, hosts, socketTimeoutMs);
 
 		if ( topic == null || topic.length() < 1 )
 		{
@@ -386,7 +413,7 @@ public class CambriaSimplerBatchPublisher extends CambriaBaseClient implements C
 		}, 100, 50, TimeUnit.MILLISECONDS );
 	}
 
-	private static class TimestampedMessage extends message
+	static class TimestampedMessage extends message
 	{
 		public TimestampedMessage ( message m )
 		{

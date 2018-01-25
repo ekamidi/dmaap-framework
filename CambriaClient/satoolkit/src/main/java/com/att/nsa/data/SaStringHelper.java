@@ -248,6 +248,47 @@ public class SaStringHelper
 			}
 		} );
 	}
+	
+	/**
+	 * Split a string on dots into individual tokens.
+	 * @param line
+	 * @return split array
+	 */
+	public static String[] splitStringOnDot ( final String line )
+	{
+		return splitLine ( line, new charFilter ()
+		{
+			@Override
+			public boolean meetsFilter ( char c )
+			{
+				return c == '.';
+			}
+		} );
+	}
+
+	public static String joinStringWithDot ( String[] segments )
+	{
+		return joinStringWithDot ( segments, 0 );
+	}
+
+	public static String joinStringWithDot ( String[] segments, int offset )
+	{
+		return joinStringWithDot ( segments, offset, segments.length - offset );
+	}
+
+	public static String joinStringWithDot ( String[] segments, int offset, int length )
+	{
+		int count = 0;
+		final StringBuilder sb = new StringBuilder ();
+		for ( int i=offset; count<length; i++ )
+		{
+			if ( i > offset ) sb.append ( '.' );
+			sb.append ( segments [ i ] );
+			count++;
+		}
+		return sb.toString ();
+	}
+
 
 	public static String[] splitLine ( final String line, charFilter cf )
 	{
